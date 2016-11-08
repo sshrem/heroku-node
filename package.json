@@ -1,6 +1,10 @@
 {
   "name": "DisignStudio",
   "description": "DisignStudio Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "version": "1.0.0",
   "private": "true",
   "author": "DisignStudio ltd.",
