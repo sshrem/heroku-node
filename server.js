@@ -10,15 +10,6 @@ var
     path = require('path'),
     _ = require('lodash');
 
-
-
-// set the home page route
-app.get('/', function(req, res) {
-
-    // ejs render automatically looks in the views folder
-    res.render('index');
-});
-
 // Express Configuration
 require('./server/config/express')(app, config);
 
