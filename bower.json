@@ -1,0 +1,16 @@
+{
+  "name": "DisignStudio",
+  "description": "DisignStudio Website",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-sanitize": "1.4.8",
+    "angular-translate": "2.10",
+    "angular-ui-router": "0.2.18",
+    "materialize": "0.97.5",
+    "lodash": "4.6.1"
+  },
+  "resolutions": {
+    "angular": "~1.4.7"
+  }
+}

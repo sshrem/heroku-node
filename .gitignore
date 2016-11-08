@@ -1,3 +1,16 @@
+# All class files
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+# Maven
+log/
+target/
+dependency-reduced-pom.xml
+
+
 # Logs
 logs
 *.log
@@ -27,6 +40,8 @@ coverage
 build/Release
 
 # Dependency directories
+# NPM & Bower
+bower_components/
 node_modules
 jspm_packages
 
@@ -35,3 +50,13 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+npm-debug.log
+.DS_Store
+/*.env
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+

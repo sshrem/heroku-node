@@ -1,0 +1,45 @@
+.hebrew {
+    direction: rtl;
+}
+
+.modal {
+    height: 90% !important;
+}
+.ds-modal-close {
+    position:absolute;
+    top: 0;
+    right:0;
+}
+
+/* Navigation */
+nav {
+    height: 100px !important;
+}
+
+.view-holder {
+    margin-top: 50px;
+}
+
+.ds-menu-item {
+    padding: 50px 15px !important;
+}
+
+/** project **/
+
+.ds-card-row{
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+}
+
+.ds-feature-icon {
+    color: green;
+}
+
+.ds-feature{
+    white-space: normal;
+}
+
+.ds-imaging {
+    width: 100%;
+}
