@@ -27,6 +27,15 @@ gulp.task('prod', function(){
         .pipe(gulp.dest('./client/js/'))
 });
 
+gulp.task('production', function(){
+    gulp.src('config.json')
+        .pipe(gulpNgConfig('DisignStudio',{
+            environment: 'production',
+            createModule: false
+        }))
+        .pipe(gulp.dest('./client/js/'))
+});
+
 gulp.task('serve', ['watch'], function () {
     nodemon({
         script: 'server.js',

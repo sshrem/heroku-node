@@ -28,7 +28,7 @@ module.exports = function (app, config) {
     app.use(cors({credentials: true, origin: true}));
     app.use(methodOverride());
 
-    if (['prod', 'stg'].indexOf(config.env) !== -1) {
+    if (['production', 'prod', 'stg'].indexOf(config.env) !== -1) {
         app.use(favicon(path.join(config.root, 'client/images', 'favicon.ico')));
         app.use(express.static(path.join(config.root, 'client')));
         app.set('appPath', 'client');
