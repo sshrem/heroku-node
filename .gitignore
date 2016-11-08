@@ -41,7 +41,6 @@ build/Release
 
 # Dependency directories
 # NPM & Bower
-bower_components/
 node_modules
 jspm_packages
 
