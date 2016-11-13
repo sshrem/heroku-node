@@ -29,14 +29,14 @@ module.exports = function (app, config) {
     app.use(methodOverride());
 
     if (['production', 'prod', 'stg'].indexOf(config.env) !== -1) {
-        app.use(favicon(path.join(config.root, 'client/images', 'favicon.ico')));
+        app.use(favicon(path.join(config.root, 'client/images', 'favicon.png')));
         app.use(express.static(path.join(config.root, 'client')));
         app.set('appPath', 'client');
         app.use(morgan(':method :url :status :response-time ms - :res[content-length]'));
     }
 
     if ('dev' === config.env) {
-        app.use(favicon(path.join(config.root, 'client/images', 'favicon.ico')));
+        app.use(favicon(path.join(config.root, 'client/images', 'favicon.png')));
         app.use(express.static(path.join(config.root, 'client')));
         app.set('appPath', 'client');
         app.use(morgan(':method :url :status :response-time ms - :res[content-length]'));

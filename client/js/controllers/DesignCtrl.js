@@ -18,7 +18,8 @@ angular.module('DisignStudio')
   })
   .controller('DesignCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams) {
 
-    var initRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
+    var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designs';
+
 
     $scope.designFilters;
     $scope.designsToShow;
@@ -31,7 +32,7 @@ angular.module('DisignStudio')
     });
 
     $scope.playVideo = function(title, imgCode) {
-      var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4', height: $rootScope.height, width: $rootScope.width });
+      var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4'  });
       $window.plugins.streamingMedia.playVideo(imagingUrl);
       $scope.registerEvent("PlayVideo" , {
         "design":title,
@@ -81,16 +82,20 @@ angular.module('DisignStudio')
         };
         $scope.filterDesigns(1);
       } else {
-        $http.get(initRequestUrl, {
-          params: {
+        $http.post(initRequestUrl, {
             atId: $stateParams.aptId,
-            pId: $stateParams.projId
-          }
+            projId: $stateParams.projId,
+            supplierFilter: {
+              supplier: 1
+            },
+            itemFilters: []
         }).success(function(res) {
           if (res.data) {
             $scope.allDesigns = res.data;
             $scope.filterDesigns(1);
           }
+        }).error(function(e) {
+          var a=1;
         });
       }
     }

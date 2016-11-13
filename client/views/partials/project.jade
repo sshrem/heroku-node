@@ -7,7 +7,7 @@ div.row
                 div.card-content.center-align
                     h6.hebrew.white-text {{apt.name}}
                     a.waves-effect.yellow-text.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'images' | translate}}
-                    a.waves-effect.yellow-text.waves-teal.btn-flat(ui-sref="designs({projId: {{projectCode}}, aptId:{{apt.code}}})") {{'designs' | translate}}
+                    a.waves-effect.yellow-text.waves-teal.btn-flat(ui-sref="designs({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
     div.col.s3.ds-project-tabs
         ul.tabs
