@@ -5,22 +5,22 @@ div.row(ng-repeat="designRow in designsToShow")
                 h6.hebrew {{design.title}}
             div.card-image
                 cl-video#video.ds-imaging(public-id="{{design.imaging}}"  preload="none" controls)
-div.fixed-action-btn(style="bottom: 45px; right: 24px;")
-    a.btn-floating.btn-large.blue
-        i.large.material-icons filter_list
-    ul
-        li
-            a.btn-floating.purple.tooltipped(data-tooltip="All Rooms" data-position="left")
-                i.material-icons(ng-click="filterDesigns(1)") &#xE88A;
-        li
-            a.btn-floating.yellow.tooltipped(data-tooltip="Living Room" data-position="left")
-                i.material-icons(ng-click="filterDesigns(2)") &#xE16B;
-        li
-            a.btn-floating.green.tooltipped(data-tooltip="Kitchen" data-position="left")
-                i.material-icons(ng-click="filterDesigns(3)") &#xEB47;
-        li
-            a.btn-floating.red.tooltipped(data-tooltip="Bed Room" data-position="left")
-                i.material-icons(ng-click="filterDesigns(4)") &#xE53A;
-        li
-            a.btn-floating.orange.tooltipped(data-tooltip="Dining Room" data-position="left")
-                i.material-icons(ng-click="filterDesigns(5)") &#xE556;
+//div.fixed-action-btn(style="bottom: 45px; right: 24px;")
+//    a.btn-floating.btn-large.blue
+//        i.large.material-icons filter_list
+//    ul
+//        li
+//            a.btn-floating.purple.tooltipped(data-tooltip="All Rooms" data-position="left")
+//                i.material-icons(ng-click="filterDesigns(1)") &#xE88A;
+//        li
+//            a.btn-floating.yellow.tooltipped(data-tooltip="Living Room" data-position="left")
+//                i.material-icons(ng-click="filterDesigns(2)") &#xE16B;
+//        li
+//            a.btn-floating.green.tooltipped(data-tooltip="Kitchen" data-position="left")
+//                i.material-icons(ng-click="filterDesigns(3)") &#xEB47;
+//        li
+//            a.btn-floating.red.tooltipped(data-tooltip="Bed Room" data-position="left")
+//                i.material-icons(ng-click="filterDesigns(4)") &#xE53A;
+//        li
+//            a.btn-floating.orange.tooltipped(data-tooltip="Dining Room" data-position="left")
+//                i.material-icons(ng-click="filterDesigns(5)") &#xE556;

@@ -36,6 +36,11 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
       templateUrl: "/partials/designs",
       controller: 'DesignCtrl'
     })
+    .state('designSuppliers', {
+      url: '/designSuppliers/:projId/:aptId',
+      templateUrl: "/partials/designSuppliers",
+      controller: 'DesignSuppliersCtrl'
+    })
 })
 
 .run(function($rootScope, $window) {

@@ -1,0 +1,7 @@
+div.row
+        ul(class="collapsible popout" data-collapsible="accordion" watch)
+            li(ng-repeat="room in roomItems")
+                div.collapsible-header
+                    | {{room.title}}
+                div.collapsible-body
+                    |{{room.roomId}}
