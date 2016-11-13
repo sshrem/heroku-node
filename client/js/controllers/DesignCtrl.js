@@ -32,7 +32,7 @@ angular.module('DisignStudio')
     });
 
     $scope.playVideo = function(title, imgCode) {
-      var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4'  });
+      var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4', crop: 'scale'  });
       $window.plugins.streamingMedia.playVideo(imagingUrl);
       $scope.registerEvent("PlayVideo" , {
         "design":title,
