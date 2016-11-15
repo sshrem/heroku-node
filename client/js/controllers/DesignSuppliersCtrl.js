@@ -22,9 +22,19 @@ angular.module('DisignStudio')
 
     $scope.roomItems
     $scope.allSuppliers;
+    $scope.selected=[];
+    $scope.isChecked =function(index) {
+      return index==0;
+    }
+    $scope.getHeaderImage = function(){
+      return   "&#xE88A";
+    };
+
 
     $(document).ready(function(){
       $('.tooltipped').tooltip({delay: 50});
+      $('.collapsible').collapsible({
+      });
     });
 
     // $scope.playVideo = function(title, imgCode) {
@@ -84,7 +94,8 @@ angular.module('DisignStudio')
                   "supplierId": 1
                 }
               ]
-            },
+            }
+            ,
             {
               "title": "choosebedroomfloor",
               "roomId": 1,
@@ -135,8 +146,12 @@ angular.module('DisignStudio')
             }
           ]
         };
-        $scope.allSuppliers = res.data.suppliers;
-        $scope.roomItems = res.data.roomItems;
+        $scope.allSuppliers = $scope.data.suppliers;
+        $scope.roomItems = $scope.data.roomItems;
+        for(var room in $scope.roomItems){
+          $scope.selected[room] = $scope.roomItems[room].items[0].offeringId;
+        }
+
       } else {
         $http.post(initRequestUrl, {
             atId: $stateParams.aptId,
@@ -145,7 +160,9 @@ angular.module('DisignStudio')
           if (res.data) {
             $scope.allSuppliers = res.data.suppliers;
             $scope.roomItems = res.data.roomItems;
-
+            for(var room in $scope.roomItems){
+              $scope.selected[room] = $scope.roomItems[room].items[0].offeringId;
+            }
           }
         }).error(function(e) {
           var a=1;
