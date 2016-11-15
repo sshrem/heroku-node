@@ -1,5 +1,5 @@
 {
-  "name": "DisignStudio",
+  "name": "disignstudio",
   "description": "DisignStudio Website",
   "dependencies": {
     "angular": "~1.4.7",
