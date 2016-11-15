@@ -20,16 +20,15 @@ angular.module('DisignStudio')
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designsFilters';
 
+``    $scope.atId = $stateParams.aptId;
+    $scope.projId = $stateParams.projId;
+
     $scope.roomItems
     $scope.allSuppliers;
     $scope.selected=[];
     $scope.isChecked =function(index) {
       return index==0;
     }
-    $scope.getHeaderImage = function(){
-      return   "&#xE88A";
-    };
-
 
     $(document).ready(function(){
       $('.tooltipped').tooltip({delay: 50});

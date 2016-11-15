@@ -1,66 +1,23 @@
 div
     br
 div.row
-    ul.col.s9.collapsible(data-collapsible="expandable" )
-        li(ng-repeat="room in roomItems" track by $index)
-            div.active.collapsible-header
-                i.material-icons &#xE88A
-                i.material-icons &#xE16B
-                i.material-icons &#xEB47
-                i.material-icons &#xE53A
-                i.material-icons &#xE556
-                | {{room.title | translate}}
-            div.row.collapsible-body
-                form(name="{{room.title}}" )
+    form(name="roomsItems" )
+        ul.col.s9.collapsible(data-collapsible="expandable" )
+            li(ng-repeat="room in roomItems" track by $index)
+                div.collapsible-header
+                    | {{room.title | translate}}
+                div.row.collapsible-body
                     ul.col.s3(ng-repeat="item in room.items")
                         input(id="radio_{{$parent.$index}}_{{$index}}"  name="group{{$parent.$index}}" type="radio" ng-model="selected[$parent.$index]" value="{{item.offeringId}}" ng-checked="isChecked($index)")
                         label(for="radio_{{$parent.$index}}_{{$index}}")
                         cl-image(public-id="{{item.imgCode}}"  width="50" crop="scale" format="png" quality="80" )
                         | {{item.name}}
 
-//div.row
-//    ul.col.s9.collapsible(data-collapsible="expandable" )
-//        li(ng-repeat="room in roomItems" track by $index)
-//            div.collapsible-header
-//                i.material-icons &#xE88A
-//                i.material-icons &#xE16B
-//                i.material-icons &#xEB47
-//                i.material-icons &#xE53A
-//                i.material-icons &#xE556
-//                | {{room.title | translate}}
-//            div.row.collapsible-body
-//                form(name="{{room.title}}" )
-//                    div.col.s3(ng-repeat="item in room.items" ng-init="incLoopIndex()")
-//                        input(id="radio_{{$parent.$index}}_{{$index}}"  name="group{{$parent.$index}}" type="radio" ng-model="selected[$parent.$index]" value="{{item.offeringId}}" ng-checked="isChecked($index)")
-//                        label(for="radio_{{$parent.$index}}_{{$index}}")
-//                        cl-image(public-id="{{item.imgCode}}"  width="50" crop="scale" format="png" quality="80" )
-//                        | {{item.name}}
+button.btn.waves-effect.waves-light(type="submit" name="action" ui-sref="designs({projId: {{projId}}, aptId: {{atId}} })")
+    | Submit
+    i.material-icons.right send
 
-//div.row
-//    form.col.s9(name="test")
-//    div.col.s3(ng-repeat="item in roomItems[0].items" ng-init="incLoopIndex()")
-//        input(name="group1" type="radio" id="rb{{$index}}" ng-checked="isChecked($index)")
-//        label(for="rb{{$index}}")
-//        cl-image(public-id="{{item.imgCode}}"  width="80" crop="scale" format="png" quality="80" )
-//        | {{item.name}} {{rbIndex}}
-//div.row
-//    form.col.s9(name="testForm")
-//        input.col.s3(name="group2" type="radio" id="rb")
-//        label(for="rb")
-//        |Hello
-//        input(name="group2" type="radio" id="rb5")
-//        label.col.s3(for="rb5")
-//        | World
-//        input(id="cb1" type="checkbox" ng-model="checkboxModel.value3")
-//        label(for="cb1")
-//        | 2
-//        input(id="cb2" type="checkbox" ng-model="checkboxModel.value4")
-//        label(for="cb2")
-//        | 3
-//        br
-//        tt
-//        | value1 = {{checkboxModel.value3}}
-//        br
-//        tt
-//        | value2 = {{checkboxModel.value4}}
-
+//i.material-icons &#xE16B;
+//i.material-icons &#xEB47
+//i.material-icons &#xE53A
+//i.material-icons &#xE63D
