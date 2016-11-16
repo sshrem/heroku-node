@@ -20,44 +20,36 @@ angular.module('DisignStudio')
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designsFilters';
 
-``    $scope.atId = $stateParams.aptId;
-    $scope.projId = $stateParams.projId;
-
-    $scope.roomItems
+    $scope.roomItems;
+    $scope.itemFilters=[];
     $scope.allSuppliers;
-    $scope.selected=[];
-    $scope.isChecked =function(index) {
-      return index==0;
-    }
-
+    $rootScope.selected=[];
     $(document).ready(function(){
       $('.tooltipped').tooltip({delay: 50});
-      $('.collapsible').collapsible({
-      });
+      $('.collapsible').collapsible({});
     });
 
-    // $scope.playVideo = function(title, imgCode) {
-    //   var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4', crop: 'scale'  });
-    //   $window.plugins.streamingMedia.playVideo(imagingUrl);
-    //   $scope.registerEvent("PlayVideo" , {
-    //     "design":title,
-    //     "project": $stateParams.projId,
-    //     "apartment": $stateParams.aptId
-    //   });
-    // }
-    //
-    // $scope.filterDesigns = function(roomType) {
-    //   $scope.roomTypeSelected = roomType;
-    //   $scope.designsToShow = designByRoomFilter($scope.allDesigns.designs, roomType);
-    //   $scope.designsToShow = _.chunk($scope.designsToShow,3);
-    //   $scope.registerEvent("FilterDesigns" , {
-    //     "project": $stateParams.projId,
-    //     "apartment": $stateParams.aptId,
-    //     "room": roomType
-    //   });
-    // }
+    $scope.getDesignsParams = function () {
+        var params = {
+            projId: $stateParams.projId,
+            aptId: $stateParams.aptId,
+            itemFilters: $scope.itemFilters
+        };
+        return params;
 
-    function init() {
+    }
+
+    $scope.getSelectedValue = function (roomId, offeringId) {
+        return {room: roomId, offer: offeringId}
+    }
+
+      $scope.isChecked =function(index) {
+          return index==0;
+      }
+
+
+
+      function init() {
       if ($rootScope.isDebugMode) {
         $scope.data = {
           "title": "דירת 4 חדרים | טיפוס B2",
@@ -148,7 +140,11 @@ angular.module('DisignStudio')
         $scope.allSuppliers = $scope.data.suppliers;
         $scope.roomItems = $scope.data.roomItems;
         for(var room in $scope.roomItems){
-          $scope.selected[room] = $scope.roomItems[room].items[0].offeringId;
+            $rootScope.selected[room] = {
+              room: $scope.roomItems[room].roomId,
+              offer: $scope.roomItems[room].items[0].offeringId
+            };
+            $scope.itemFilters[room] = $scope.roomItems[room].roomId + "_" + $scope.roomItems[room].items[0].offeringId;
         }
 
       } else {
@@ -160,7 +156,12 @@ angular.module('DisignStudio')
             $scope.allSuppliers = res.data.suppliers;
             $scope.roomItems = res.data.roomItems;
             for(var room in $scope.roomItems){
-              $scope.selected[room] = $scope.roomItems[room].items[0].offeringId;
+                $rootScope.selected[room] = {
+                    room: $scope.roomItems[room].roomId,
+                    offer: $scope.roomItems[room].items[0].offeringId
+                };
+
+                $scope.itemFilters[room] = $scope.roomItems[room].roomId + "_" + $scope.roomItems[room].items[0].offeringId;
             }
           }
         }).error(function(e) {

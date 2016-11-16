@@ -21,11 +21,19 @@ angular.module('DisignStudio')
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designs';
 
 
-    $scope.designFilters;
     $scope.designsToShow;
     $scope.allDesigns;
     $scope.roomTypeSelected = 1;
     $scope.stam = $stateParams.projId + ' - ' + $stateParams.aptId;
+
+    var filters = [];
+    var items = $stateParams.itemFilters.split(',');
+    for(var i  in items){
+      var roomItem = items[i].split('_')
+      var room = parseInt(roomItem[0]);
+      var offer = parseInt(roomItem[1]);
+      filters.push({room: room, offer: offer});
+    }
 
     $(document).ready(function(){
       $('.tooltipped').tooltip({delay: 50});
@@ -51,6 +59,7 @@ angular.module('DisignStudio')
         "room": roomType
       });
     }
+
 
     function init() {
       if ($rootScope.isDebugMode) {
@@ -88,7 +97,7 @@ angular.module('DisignStudio')
             supplierFilter: {
               supplier: 1
             },
-            itemFilters: []
+            itemFilters: filters
         }).success(function(res) {
           if (res.data) {
             $scope.allDesigns = res.data;

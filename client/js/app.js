@@ -32,7 +32,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
       controller: 'ProjectCtrl'
     })
     .state('designs', {
-      url: '/designs/:projId/:aptId',
+      url: '/designs/:projId/:aptId/:itemFilters',
       templateUrl: "/partials/designs",
       controller: 'DesignCtrl'
     })
@@ -48,6 +48,8 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   $rootScope.isDebugMode = false;
   // $rootScope.domain = "127.0.0.1:8082";
   $rootScope.domain = "project-services.herokuapp.com";
+
+  $rootScope.selected=[];
 
   $rootScope.$on('$routeChangeSuccess', function() {
 
