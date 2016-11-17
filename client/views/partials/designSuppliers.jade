@@ -6,7 +6,7 @@ div.row
             li(ng-repeat="room in roomItems" track by $index)
                 div.collapsible-header
                     | {{room.title | translate}}
-                div.row.collapsible-body.active
+                div.row.collapsible-body
                     p
                         div
                             ul.col.s3(ng-repeat="item in room.items")
@@ -16,7 +16,6 @@ div.row
                                 | {{item.name}}
 div.row
     div.col.s3
-        //button.btn.waves-effect.waves-light(type="submit" name="action" ui-sref="designs({projId: {{projId}}, aptId: {{atId}})")
         button.btn.waves-effect.waves-light(type="submit" name="action" ui-sref="designs(getDesignsParams())")
             | {{'visualization' | translate}}
             i.material-icons.right send

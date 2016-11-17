@@ -24,10 +24,16 @@ angular.module('DisignStudio')
     $scope.itemFilters=[];
     $scope.allSuppliers;
     $rootScope.selected=[];
+
     $(document).ready(function(){
       $('.tooltipped').tooltip({delay: 50});
-      $('.collapsible').collapsible({});
+      $('.collapsible').collapsible();
     });
+
+    setTimeout(function() {
+      $('.collapsible-header').addClass('active');
+      $('.collapsible').collapsible();
+    }, 1000);
 
     $scope.getDesignsParams = function () {
         var params = {
@@ -43,11 +49,9 @@ angular.module('DisignStudio')
         return {room: roomId, offer: offeringId}
     }
 
-      $scope.isChecked =function(index) {
-          return index==0;
-      }
-
-
+    $scope.isChecked =function(index) {
+        return index==0;
+    }
 
       function init() {
       if ($rootScope.isDebugMode) {
@@ -164,6 +168,7 @@ angular.module('DisignStudio')
                 $scope.itemFilters[room] = $scope.roomItems[room].roomId + "_" + $scope.roomItems[room].items[0].offeringId;
             }
           }
+
         }).error(function(e) {
           var a=1;
         });
