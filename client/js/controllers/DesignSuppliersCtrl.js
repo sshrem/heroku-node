@@ -49,7 +49,17 @@ angular.module('DisignStudio')
     }
 
     $scope.getIcon = function (roomId) {
-        return {room: roomId, offer: offeringId}
+      switch(roomId){
+        case 1:
+          return "hotel";
+        case 2:
+          return "weekend";
+        case 3:
+          return "wc";
+        default:
+          return "hotel";
+
+      }
     }
 
     $scope.isChecked =function(index) {
