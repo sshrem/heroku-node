@@ -18,7 +18,7 @@ angular.module('DisignStudio')
   })
   .controller('DesignSuppliersCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams) {
 
-    var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designsFilters';
+    var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
 
     $scope.roomItems;
     $scope.itemFilters=[];
@@ -42,10 +42,13 @@ angular.module('DisignStudio')
             itemFilters: $scope.itemFilters
         };
         return params;
-
     }
 
     $scope.getSelectedValue = function (roomId, offeringId) {
+        return {room: roomId, offer: offeringId}
+    }
+
+    $scope.getIcon = function (roomId) {
         return {room: roomId, offer: offeringId}
     }
 

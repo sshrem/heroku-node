@@ -18,7 +18,7 @@ angular.module('DisignStudio')
   })
   .controller('DesignCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams) {
 
-    var initRequestUrl = 'http://' + $rootScope.domain + '/api/mobile/designs';
+    var initRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
 
 
     $scope.designsToShow;
