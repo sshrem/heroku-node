@@ -44,3 +44,7 @@ nav {
 .ds-imaging {
     width: 100%;
 }
+
+.tabs .indicator {
+    background-color: #B7D433;
+}

@@ -6,29 +6,29 @@ div.row
                     cl-image(public-id="{{apt.image}}" format="png" quality="80")
                 div.card-content.center-align
                     h6.hebrew.white-text {{apt.name}}
-                    a.waves-effect.light-green-text.text-accent-2.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'images' | translate}}
-                    a.waves-effect.light-green-text.text-accent-2.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
+                    a.waves-effect.light-green-text.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'images' | translate}}
+                    a.waves-effect.light-green-text.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
     div.col.s3.ds-project-tabs
         ul.tabs
             li.tab.col.s1
-                a.active(href="#aboutCompany") {{'company' | translate}}
+                a.active.light-green-text(href="#aboutCompany") {{'company' | translate}}
             li.tab.col.s1
-                a(href="#aboutProject") {{'project' | translate}}
+                a.light-green-text(href="#aboutProject") {{'project' | translate}}
             li.tab.col.s1
-                a(href="#features") {{'features' | translate}}
+                a.light-green-text(href="#features") {{'features' | translate}}
         div#aboutCompany.hebrew
             cl-image(public-id="{{project.entrepreneurCachedData.logo}}"   format="png" quality="80" )
-            div(ng-bind-html="project.entrepreneurCachedData.about")
+            div.grey-text.text-darken-2(ng-bind-html="project.entrepreneurCachedData.about")
         div#aboutProject.hebrew
             a(ng-click="openProjectModal()")
                 cl-image(public-id="{{project.imageUrl}}"  width="300" crop="scale" format="png" quality="80" )
 
-            div(ng-bind-html="project.about")
+            div.grey-text.text-darken-2(ng-bind-html="project.about")
         div#features.hebrew
             div(ng-repeat="feat in project.features")
-                i.material-icons.ds-feature-icon check
-                span.ds-feature.hebrew.black-text {{feat}}
+                i.material-icons.ds-feature-icon.light-green-text check
+                span.ds-feature.hebrew.grey-text.text-darken-2 {{feat}}
 
 
 // Project Images Modal
