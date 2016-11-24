@@ -1,6 +1,6 @@
 div.row(ng-repeat="designRow in designsToShow")
-    div.col.s8(ng-repeat="design in designRow")
-        div.card.blue-grey.yellow-text
+    div.col.s8.offset-s2(ng-repeat="design in designRow")
+        div.card.grey.darken-3.lime-text.text-accent-3
             div.card-content
                 h6.hebrew {{design.title}}
             div.card-image
