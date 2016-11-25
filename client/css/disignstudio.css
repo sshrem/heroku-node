@@ -48,3 +48,14 @@ nav {
 .tabs .indicator {
     background-color: #B7D433;
 }
+
+.radio-green-light[type="radio"].with-gap:checked+label:after{
+    border: 5px solid #B7D433;
+    background-color: #B7D433;
+}
+
+.radio-green-light[type="radio"].with-gap:checked+label:before{
+    border-radius: 50%;
+    border: 5px solid #B7D433;
+
+}

@@ -8,12 +8,12 @@ div.row
                 div.row.collapsible-body
                     ul
                         li.col.s4(ng-repeat="item in room.items")
-                            input(id="radio_{{$parent.$index}}_{{$index}}"  name="group{{$parent.$index}}" type="radio" ng-model="itemFilters[$parent.$index]" value="{{room.roomId}}_{{item.offeringId}}" ng-checked="isChecked($index)" )
+                            input.with-gap.radio-green-light(id="radio_{{$parent.$index}}_{{$index}}"  name="group{{$parent.$index}}" type="radio" ng-model="itemFilters[$parent.$index]" value="{{room.roomId}}_{{item.offeringId}}" ng-checked="isChecked($index)" )
                             label(for="radio_{{$parent.$index}}_{{$index}}")
                             cl-image(public-id="{{item.imgCode}}"  width="50" crop="scale" format="png" quality="80" )
                             |  {{item.name}}
 div.row
     div.col.s3
-        button.btn.waves-effect.waves-light(type="submit" name="action" ui-sref="designs(getDesignsParams())")
+        button.btn.waves-effect.light-green(type="submit" name="action" ui-sref="designs(getDesignsParams())")
             | {{'visualization' | translate}}
             i.material-icons.right send
