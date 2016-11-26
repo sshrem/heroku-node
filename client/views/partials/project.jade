@@ -1,13 +1,14 @@
 div.row
     div.col.s8
-        div.col.s5(ng-repeat="aptRow in apartments")
-            div.card(ng-repeat="apt in aptRow")
-                div.card-image
-                    cl-image(public-id="{{apt.image}}" format="png" quality="80")
-                div.light-green.card-content.center-align
-                    h6.hebrew.white-text {{apt.name}}
-                    a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
-                    a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
+        div.row
+            div.col.s5(ng-repeat="apt in apartments")
+                div.card
+                    div.card-image
+                        cl-image(public-id="{{apt.image}}" format="png" quality="80")
+                    div.light-green.card-content.center-align
+                        h6.hebrew.white-text {{apt.name}}
+                        a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
+                        a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
     div.col.s4.ds-project-tabs
         ul.tabs

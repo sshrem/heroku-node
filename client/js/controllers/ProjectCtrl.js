@@ -17,7 +17,7 @@ angular.module('DisignStudio')
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
 
     var buildApartmentsArray = function(){
-      $scope.apartments = _.chunk($scope.project.apartmentTemplateCachedData,3);
+      $scope.apartments = $scope.project.apartmentTemplateCachedData;
     }
 
     $scope.openApartmentModal = function(aptTemplate){
