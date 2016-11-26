@@ -9,7 +9,9 @@ var appTranslations = {
 		"chooselivingroomfloor": "Choose living room floor",
 		"choosebedroomfloor": "Choose bedroom floor",
 		"choosebathroomcladding": "Choose bathroom cladding",
-		"visualization" : "Virtualization"
+		"visualization" : "Virtualization",
+		"apartmentblueprint": "Apartment blueprint"
+
 	},
 	"he": {
 		"company": "יזם",
@@ -21,6 +23,7 @@ var appTranslations = {
 		"chooselivingroomfloor": "בחר ריצוף סלון ומטבח",
 		"choosebedroomfloor": "בחר עיצוב חדרי שינה",
 		"choosebathroomcladding": "בחר חיפויים לאמבטיה",
-		"visualization": "הדמייה"
+		"visualization": "הדמייה",
+		"apartmentblueprint": "תוכנית דירה"
 	}
 }

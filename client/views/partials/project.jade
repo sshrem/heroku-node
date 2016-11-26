@@ -1,15 +1,15 @@
 div.row
-    div.col.s9
+    div.col.s8
         div.ds-card-container(ng-repeat="aptRow in apartments")
             div.card.grey.darken-2.ds-card-row(ng-repeat="apt in aptRow")
                 div.card-image
                     cl-image(public-id="{{apt.image}}" format="png" quality="80")
                 div.card-content.center-align
                     h6.hebrew.white-text {{apt.name}}
-                    a.waves-effect.light-green-text.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'images' | translate}}
+                    a.waves-effect.light-green-text.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
                     a.waves-effect.light-green-text.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
-    div.col.s3.ds-project-tabs
+    div.col.s4.ds-project-tabs
         ul.tabs
             li.tab.col.s1
                 a.active.light-green-text(href="#aboutCompany") {{'company' | translate}}
@@ -26,9 +26,10 @@ div.row
 
             div.grey-text.text-darken-2(ng-bind-html="project.about")
         div#features.hebrew
-            div(ng-repeat="feat in project.features")
-                i.material-icons.ds-feature-icon.light-green-text check
-                span.ds-feature.hebrew.grey-text.text-darken-2 {{feat}}
+            p
+                div(ng-repeat="feat in project.features")
+                    i.material-icons.ds-feature-icon.light-green-text check
+                    span.ds-feature.hebrew.grey-text.text-darken-2 {{feat}}
 
 
 // Project Images Modal
