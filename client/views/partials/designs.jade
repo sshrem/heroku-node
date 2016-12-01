@@ -1,10 +1,10 @@
 div.row(ng-repeat="designRow in designsToShow")
-    div.col.s8.offset-s2(ng-repeat="design in designRow")
+    div.col.s12(ng-repeat="design in designRow")
         div.card.white.grey-text.text-darken-2
             div.card-content
                 h6.hebrew {{design.title}}
             div.card-image
-                cl-video#video.ds-imaging(public-id="{{design.imaging}}"  preload="none" controls autoplay loop)
+                cl-video#video.ds-imaging(public-id="{{design.imaging}}"  preload="none" controls autoplay)
 //div.fixed-action-btn(style="bottom: 45px; right: 24px;")
 //    a.btn-floating.btn-large.blue
 //        i.large.material-icons filter_list
