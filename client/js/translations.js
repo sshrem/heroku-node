@@ -25,5 +25,18 @@ var appTranslations = {
 		"choosebathroomcladding": "בחר חיפויים לאמבטיה",
 		"visualization": "הדמייה",
 		"apartmentblueprint": "תוכנית דירה"
+	},
+	"ru": {
+		"company": "",
+		"project": "",
+		"features": "",
+		"images": "",
+		"designs": "",
+		"apartments" : "",
+		"chooselivingroomfloor": "",
+		"choosebedroomfloor": "",
+		"choosebathroomcladding": "",
+		"visualization": "",
+		"apartmentblueprint": ""
 	}
 }
