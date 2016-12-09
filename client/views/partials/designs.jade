@@ -4,12 +4,7 @@ div.row(ng-repeat="designRow in designsToShow")
             div.card-content
                 h6.hebrew {{design.title}}
             div.card-image
-                cl-video.ds-imaging(public-id="sandbox/Test_1_CT_IC_CCVM"  preload="none" controls autoplay)
-                //cl-video.ds-imaging(public-id="sandbox/Test_1_CT_IC_CCVM"  preload="none" controls autoplay)
-                    //cl-video-transformation(start_offset= "6.5")
-                    //cl-video-transformation(overlay="video:sandbox:Test_2_CT_IC_CCVM" flags="splice")
-                    //cl-video-transformation(overlay="video:sandbox:Test_3_CT_IC_CCVM" flags="splice")
-                    //cl-video-transformation(overlay="video:sandbox:Test_4_CT_IC_CCVM" flags="splice")
+                cl-video#video.ds-imaging(public-id="{{design.imaging}}"  preload="none" controls autoplay)
 
 //div.fixed-action-btn(style="bottom: 45px; right: 24px;")
 //    a.btn-floating.btn-large.blue
