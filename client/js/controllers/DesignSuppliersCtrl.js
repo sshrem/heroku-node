@@ -1,5 +1,6 @@
 angular.module('DisignStudio')
-  .controller('DesignSuppliersCtrl', function ($rootScope, $scope, Cloudinary, designByRoomFilter, $window, $http, $stateParams, debugData, $timeout) {
+  .controller('DesignSuppliersCtrl', function ($rootScope, $scope, Cloudinary, designByRoomFilter, $window, $http,
+                                               $stateParams, debugData, $timeout) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
 
