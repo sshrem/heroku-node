@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('DisignStudio')
-  .controller('ProjectCtrl', function($rootScope,Cloudinary, $scope, $state, $http, debugData) {
+  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData) {
 
     angular.element(document).ready(function () {
       $('.modal-trigger').leanModal();
@@ -16,16 +16,16 @@ angular.module('DisignStudio')
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
 
-    var buildApartmentsArray = function(){
+    var buildApartmentsArray = function () {
       $scope.apartments = $scope.project.apartmentTemplateCachedData;
     }
 
-    $scope.openApartmentModal = function(aptTemplate){
+    $scope.openApartmentModal = function (aptTemplate) {
       $scope.selectedApartment = aptTemplate;
       $('#AptModal').openModal();
     }
 
-    $scope.openProjectModal = function(){
+    $scope.openProjectModal = function () {
       $('#projectModal').openModal();
     }
 
@@ -38,12 +38,12 @@ angular.module('DisignStudio')
           params: {
             code: $scope.projectCode
           }
-        }).success(function(res) {
+        }).success(function (res) {
           if (res.data) {
             $scope.project = res.data;
             buildApartmentsArray();
           }
-        }).error(function(e) {
+        }).error(function (e) {
           //
         });
       }

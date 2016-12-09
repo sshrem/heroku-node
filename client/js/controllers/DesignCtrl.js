@@ -1,6 +1,6 @@
 angular.module('DisignStudio')
-  .filter('designByRoom', function() {
-    return function(input, type) {
+  .filter('designByRoom', function () {
+    return function (input, type) {
 
       if (type == 1) {
         return input;
@@ -16,7 +16,7 @@ angular.module('DisignStudio')
       return output;
     };
   })
-  .controller('DesignCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams, debugData) {
+  .controller('DesignCtrl', function ($rootScope, $scope, Cloudinary, designByRoomFilter, $window, $http, $stateParams, debugData) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
 
@@ -28,32 +28,32 @@ angular.module('DisignStudio')
 
     var filters = [];
     var items = $stateParams.itemFilters.split(',');
-    for(var i  in items){
+    for (var i  in items) {
       var roomItem = items[i].split('_')
       var room = parseInt(roomItem[0]);
       var offer = parseInt(roomItem[1]);
       filters.push({room: room, offer: offer});
     }
 
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('.tooltipped').tooltip({delay: 50});
     });
 
-    $scope.playVideo = function(title, imgCode) {
-      var imagingUrl = Cloudinary.url(imgCode, { resource_type: 'video', format: 'mp4', crop: 'scale'  });
+    $scope.playVideo = function (title, imgCode) {
+      var imagingUrl = Cloudinary.url(imgCode, {resource_type: 'video', format: 'mp4', crop: 'scale'});
       $window.plugins.streamingMedia.playVideo(imagingUrl);
-      $scope.registerEvent("PlayVideo" , {
-        "design":title,
+      $scope.registerEvent("PlayVideo", {
+        "design": title,
         "project": $stateParams.projId,
         "apartment": $stateParams.aptId
       });
     }
 
-    $scope.filterDesigns = function(roomType) {
+    $scope.filterDesigns = function (roomType) {
       $scope.roomTypeSelected = roomType;
       $scope.designsToShow = designByRoomFilter($scope.allDesigns.designs, roomType);
-      $scope.designsToShow = _.chunk($scope.designsToShow,3);
-      $scope.registerEvent("FilterDesigns" , {
+      $scope.designsToShow = _.chunk($scope.designsToShow, 3);
+      $scope.registerEvent("FilterDesigns", {
         "project": $stateParams.projId,
         "apartment": $stateParams.aptId,
         "room": roomType
@@ -67,19 +67,19 @@ angular.module('DisignStudio')
         $scope.filterDesigns(1);
       } else {
         $http.post(initRequestUrl, {
-            atId: $stateParams.aptId,
-            projId: $stateParams.projId,
-            supplierFilter: {
-              supplier: 1
-            },
-            itemFilters: filters
-        }).success(function(res) {
+          atId: $stateParams.aptId,
+          projId: $stateParams.projId,
+          supplierFilter: {
+            supplier: 1
+          },
+          itemFilters: filters
+        }).success(function (res) {
           if (res.data) {
             $scope.allDesigns = res.data;
             $scope.filterDesigns(1);
           }
-        }).error(function(e) {
-          var a=1;
+        }).error(function (e) {
+          var a = 1;
         });
       }
     }
