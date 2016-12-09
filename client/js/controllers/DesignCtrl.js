@@ -16,7 +16,7 @@ angular.module('DisignStudio')
       return output;
     };
   })
-  .controller('DesignCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams) {
+  .controller('DesignCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams, debugData) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
 
@@ -63,32 +63,7 @@ angular.module('DisignStudio')
 
     function init() {
       if ($rootScope.isDebugMode) {
-        $scope.allDesigns = {
-          "title": "דירת 5 חדרים | טיפוס A1",
-          "designs": [{
-            "id": 3,
-            "title": "שחור ולבן",
-            "imaging": "demo/ds02_05_01",
-            "designerName": "איקאה",
-            "designerImage": "designers/ikea.png",
-            "roomName": "livingroom",
-            "roomType": 2,
-            "furnitured": false
-          }, {
-            "id": 4,
-            "title": "קרמיט",
-            "imaging": "demo/ds02_05_01",
-            "designerName": "איקאה",
-            "designerImage": "designers/ikea.png",
-            "roomName": "bedroom",
-            "roomType": 4,
-            "furnitured": false
-          }],
-          "rooms": {
-            "2": "livingroom",
-            "4": "bedroom"
-          }
-        };
+        $scope.allDesigns = debugData.debugData.allDesigns;
         $scope.filterDesigns(1);
       } else {
         $http.post(initRequestUrl, {

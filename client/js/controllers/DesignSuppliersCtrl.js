@@ -1,22 +1,5 @@
 angular.module('DisignStudio')
-  .filter('designByRoom', function() {
-    return function(input, type) {
-
-      if (type == 1) {
-        return input;
-      }
-
-      var output = [];
-      for (var i = 0; i < input.length; i++) {
-        if (input[i].roomType == type) {
-          output.push(input[i]);
-        }
-      }
-
-      return output;
-    };
-  })
-  .controller('DesignSuppliersCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams) {
+  .controller('DesignSuppliersCtrl', function($rootScope, $scope,Cloudinary, designByRoomFilter, $window, $http, $stateParams, debugData, $timeout) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
 
@@ -30,7 +13,7 @@ angular.module('DisignStudio')
       $('.collapsible').collapsible();
     });
 
-    setTimeout(function() {
+    $timeout(function() {
       $('.collapsible-header').addClass('active');
       $('.collapsible').collapsible();
     }, 1000);
@@ -68,92 +51,7 @@ angular.module('DisignStudio')
 
       function init() {
       if ($rootScope.isDebugMode) {
-        $scope.data = {
-          "title": "דירת 4 חדרים | טיפוס B2",
-          "suppliers": [
-            {
-              "id": 1,
-              "name": null,
-              "logo": "suppliers/zehavi/zehavi-logo",
-              "url": null
-            }
-          ],
-          "roomItems": [
-            {
-              "title": "chooselivingroomfloor",
-              "roomId": 2,
-              "items": [
-                {
-                  "offeringId": 5,
-                  "name": "Imperial Crema 60x60",
-                  "imgCode": "suppliers/zehavi/clearcrema.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 6,
-                  "name": "Manhatan Ivory 60x60",
-                  "imgCode": "suppliers/zehavi/manhatanivory.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 14,
-                  "name": "Clear Tobbaco 60x60",
-                  "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
-                  "supplierId": 1
-                }
-              ]
-            }
-            ,
-            {
-              "title": "choosebedroomfloor",
-              "roomId": 1,
-              "items": [
-                {
-                  "offeringId": 5,
-                  "name": "Imperial Crema 60x60",
-                  "imgCode": "suppliers/zehavi/clearcrema.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 6,
-                  "name": "Manhatan Ivory 60x60",
-                  "imgCode": "suppliers/zehavi/manhatanivory.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 13,
-                  "name": "פרקט כרמל Classic Frontal",
-                  "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
-                  "supplierId": 1
-                }
-              ]
-            },
-            {
-              "title": "choosebathroomcladding",
-              "roomId": 3,
-              "items": [
-                {
-                  "offeringId": 10,
-                  "name": "Vetro Marfil 20x60",
-                  "imgCode": "suppliers/zehavi/vetromarfil.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 11,
-                  "name": "Rain White 20x50",
-                  "imgCode": "suppliers/zehavi/rainwhite.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 12,
-                  "name": "Ethos Gris 20x60",
-                  "imgCode": "suppliers/zehavi/ethosgris.jpg",
-                  "supplierId": 1
-                }
-              ]
-            }
-          ]
-        };
+        $scope.data = debugData.debugData.designSupplier;
         $scope.allSuppliers = $scope.data.suppliers;
         $scope.roomItems = $scope.data.roomItems;
         for(var room in $scope.roomItems){
