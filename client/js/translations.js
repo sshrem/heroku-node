@@ -9,7 +9,7 @@ var appTranslations = {
 		"chooselivingroomfloor": "Choose living room floor",
 		"choosebedroomfloor": "Choose bedroom floor",
 		"choosebathroomcladding": "Choose bathroom cladding",
-		"visualization" : "Virtualization",
+		"visualization" : "Visualization",
 		"apartmentblueprint": "Apartment blueprint"
 
 	},
