@@ -1,8 +1,8 @@
 div.row
-    div.col.s8
+    div.col.s12.m8
         div.row
-            div.col.s6(ng-repeat="apt in apartments")
-                div.card
+            div.col.s12.m6(ng-repeat="apt in apartments")
+                div.card.s12.m3
                     div.card-image
                         cl-image(public-id="{{apt.image}}" format="png" quality="80")
                     div.light-green.card-content.center-align
@@ -10,13 +10,13 @@ div.row
                         a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
                         a.waves-effect.grey-text.text-darken-2.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
-    div.col.s4.ds-project-tabs
+    div.col.s12.m4.ds-project-tabs
         ul.tabs
-            li.tab.col.s1
+            li.tab.col.s4.m1
                 a.active.light-green-text(href="#aboutCompany") {{'company' | translate}}
-            li.tab.col.s1
+            li.tab.col.s5.m1
                 a.light-green-text(href="#aboutProject") {{'project' | translate}}
-            li.tab.col.s1
+            li.tab.col.s5.m1
                 a.light-green-text(href="#features") {{'features' | translate}}
         div#aboutCompany.hebrew
             cl-image(public-id="{{project.entrepreneurCachedData.logo}}"   format="png" quality="80" )
