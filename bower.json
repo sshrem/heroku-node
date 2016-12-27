@@ -9,7 +9,9 @@
     "angular-ui-router": "0.2.18",
     "materialize": "0.97.5",
     "lodash": "4.6.1",
-    "angular-animate": "1.4.7"
+    "angular-animate": "1.4.7",
+    "bootstrap": "3",
+    "cloudinary": "cloudinary_js#^2.1.8"
   },
   "resolutions": {
     "angular": "~1.4.7"
