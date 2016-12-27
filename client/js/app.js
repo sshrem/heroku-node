@@ -16,6 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
     cloud_name: 'disignstudio',
     api_key: '671623578364648'
   });
+  $.cloudinary.config({ cloud_name: 'disignstudio', api_key: '671623578364648'})
 
   var lang;
   for (lang in appTranslations) {
