@@ -32,6 +32,14 @@ angular.module('DisignStudio')
       return path;
 
     }
+
+    $scope.changeDesignVideo = function(){
+      var isPaused = $('#video2').get(0).paused;
+      if (!isPaused){
+        $scope.playDesignVideo();
+      }
+
+    };
     $scope.playDesignVideo = function () {
       $scope.showVideoDiv=true;
       var mp4Url = Cloudinary.url($scope.videoList[2], {resource_type: 'video', format: 'mp4',
