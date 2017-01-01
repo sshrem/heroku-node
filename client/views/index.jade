@@ -1,3 +1,127 @@
-//
-   Created by ohad on 11/2/15.
-p homepage
+doctype html
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en', ng-app='DisignStudio')
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='en', ng-app='DisignStudio')
+//if IE 8
+  html.no-js.lt-ie9(lang='en', ng-app='DisignStudio')
+// [if gt IE 8] <!
+html(lang='en', ng-app='DisignStudio').no-js
+    //- <![endif]
+    head
+        base(href='/')
+        meta(charset='utf-8')
+        title DisignStudio
+        meta(name='description', content='')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(rel="stylesheet", href="../bower_components/materialize/dist/css/materialize.min.css")
+        link(rel="stylesheet", href="../css/disignstudio.css")
+        link(rel="stylesheet", href="../css/style.css")
+    body(ng-controller='MainController')
+        nav.black(role="navigation")
+            div.nav-wrapper.container
+                a#logo-container.brand-logo(href="index#")
+                    img.ds-logo(ng-src="../images/logo NEW-transparent-without-slogen.png")
+                ul.right.hide-on.hide-on-med-and-down
+                    li
+                        a(href="#projects") {{'projects' | translate}}
+                    li
+                        a(href="#contact-us") {{'contact-us' | translate}}
+                    li
+                        a(ng-click="changeLanguage('en')") EN
+                    li
+                        a(ng-click="changeLanguage('he')") עברית
+                ul#nav-mobile.side-nav.black
+                    li
+                        a(href="#") {{'main' | translate}}
+                    li
+                        a(href="#projects") {{'projects' | translate}}
+                    li
+                        a(href="#contact-us") {{'contact-us' | translate}}
+                    li
+                        a(ng-click="changeLanguage('en')") EN
+                    li
+                        a(ng-click="changeLanguage('he')") עברית
+
+                a.button-collapse.ds-green( href="#" data-activates="nav-mobile")
+                    i.material-icons menu
+
+        div#index-banner.parallax-container
+            div.parallax
+                img.ds-background-image(ng-src="../images/shutterstock_155556959_low.png")
+
+        div.container
+            div.section
+                <!--   Icon Section   -->
+                div.row
+                    div.col.s12.m6
+                        div.icon-block
+                            h2.center.ds-gray
+                                i.material-icons shopping_cart
+                            h5.center {{'home-decor-marketplace' | translate}}
+                            p.light Disign Studio offers to apartment purchases 3D realistic video rendering in order to visual “tailor made” home decor. The company offers to choose a home decor, virtually walk in the apartment and see exactly the house they will get, already in the sales office where the apartment is in the plan stage
+                    div.col.s12.m6
+                        div.icon-block.ds-gray
+                            h2.center
+                                i.material-icons video_library
+                            h5.center {{'user-experience-focused' | translate}}
+                            p.light Disign Studio offers a marketplace where apartment purchases and home furnishing suppliers are met. The company brings the leading brands from all areas include kitchens, living rooms, dining tables, bedrooms, closets, bathroom fixtures, ceramics, tiles, light fixtures and curtains.
+        div.parallax-container
+            div.parallax
+                img.ds-background-image(ng-src="images/shutterstock_142028878.jpg")
+        div#projects.container
+            div.section
+                div.row
+                    div.col.s12.center
+                        div.icon-block.ds-gray
+                            h3.center
+                                i.material-icons home
+                            h4 {{'projects' | translate}}
+        menu-bar
+        div#viewHolder.view-holder(ui-view)
+
+        div.parallax-container
+            div.parallax
+                img.ds-background-image(ng-src="images/shutterstock_102801167.jpg")
+
+        div#contact-us.container
+            div.section
+                div.row
+                    div.col.s12.center.ds-gray
+                        h3.center
+                            i.mdi-content-send
+                        h4 {{'contact-us' | translate}}
+                        p.left-align.light Please contact us at shimon@disignstudio.com
+        div.parallax-container.valign-wrapper
+            div.parallax
+                img.ds-background-image(ng-src="images/shutterstock_143034457.jpg")
+        footer.page-footer.black
+            div.container
+                div.row
+            div.footer-copyright
+                div.container
+
+
+        script(src="../bower_components/angular/angular.js")
+        script(src="../bower_components/angular-sanitize/angular-sanitize.min.js")
+        script(src="../bower_components/angular-route/angular-route.js")
+        script(src="../bower_components/angular-ui-router/release/angular-ui-router.min.js")
+        script(src="../bower_components/angular-translate/angular-translate.min.js")
+        script(src="../bower_components/angular-animate/angular-animate.js")
+        script(src="../bower_components/jquery/dist/jquery.min.js")
+        script(src="../bower_components/lodash/dist/lodash.min.js")
+        script(src="../bower_components/materialize/dist/js/materialize.min.js")
+        script(src="../bower_components/cloudinary/js/jquery.cloudinary.js")
+        script(src="../lib/cloudinary-angular.js")
+        script(src="../lib/mixpanel.js")
+        script(src="../js/translations.js")
+        script(src="../js/app.js")
+        script(src="../js/controllers/ProjectCtrl.js")
+        script(src="../js/controllers/NavCtrl.js")
+        script(src="../js/controllers/DesignCtrl.js")
+        script(src="../js/controllers/DesignSuppliersCtrl.js")
+        script(src="../js/directives/navbar.js")
+        script(src="../js/services/DebugData.js")
+        script(src="../js/config.js")
+        script(src="../js/init.js")

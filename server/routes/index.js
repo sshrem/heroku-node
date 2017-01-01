@@ -8,7 +8,8 @@ module.exports = function (app, config) {
     app.get('/api/designs', content.loadDesigns);
     app.get('/api/config', index.config);
     app.get('/project', index.project);
-    app.get('/', index.project);
+    app.get('/', index.index);
+    app.get('/index', index.index);
     app.get('/partials/*', index.partials);
     app.get('/templates/*', index.templates);
 

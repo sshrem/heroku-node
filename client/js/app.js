@@ -62,7 +62,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   });
 })
 
-app.controller('MainController', function($scope) {
+app.controller('MainController', function($scope, $translate) {
 
   $scope.registerEvent = function(event, properties) {
 
@@ -72,4 +72,8 @@ app.controller('MainController', function($scope) {
 
     mixpanel.track(event, properties);
   }
+
+  $scope.changeLanguage = function (key) {
+      $translate.use(key);
+  };
 });

@@ -2,6 +2,7 @@ var appTranslations = {
 	"en": {
 		"company": "Company",
 		"project": "Project",
+		"projects": "Projects",
 		"features": "Features",
 		"images": "Images",
 		"designs": "Designs",
@@ -10,12 +11,17 @@ var appTranslations = {
 		"choosebedroomfloor": "Choose bedroom floor",
 		"choosebathroomcladding": "Choose bathroom cladding",
 		"visualization" : "Visualization",
-		"apartmentblueprint": "Apartment blueprint"
+		"apartmentblueprint": "Apartment blueprint",
+		"main": "Main",
+        "contact-us": "Contact us",
+        "home-decor-marketplace": "Home Decor Marketplace",
+        "user-experience-focused" : "User Experience Focused"
 
 	},
 	"he": {
 		"company": "יזם",
 		"project": "פרוייקט",
+		"projects": "פרוייקטים",
 		"features": "מפרט",
 		"images": "תמונות",
 		"designs": "עיצובים",
@@ -24,7 +30,11 @@ var appTranslations = {
 		"choosebedroomfloor": "בחר עיצוב חדרי שינה",
 		"choosebathroomcladding": "בחר חיפויים לאמבטיה",
 		"visualization": "הדמייה",
-		"apartmentblueprint": "תוכנית דירה"
+		"apartmentblueprint": "תוכנית דירה",
+        "main": "ראשי",
+        "contact-us": "צור קשר",
+        "home-decor-marketplace": "מרקטפלייס לעיצוב פנים",
+		"user-experience-focused" : "חווית משתמש"
 	},
 	"ru": {
 		"company": "",
