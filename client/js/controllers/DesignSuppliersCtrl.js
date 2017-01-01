@@ -11,8 +11,11 @@ angular.module('DisignStudio')
     $scope.allSuppliers;
     $scope.showVideoDiv = false;
     $scope.videoList=[];
+    $location.hash('apartment-nav');
+    $anchorScroll();
 
-    $(document).ready(function () {
+
+      $(document).ready(function () {
       $('.tooltipped').tooltip({delay: 50});
       $('.collapsible').collapsible();
     });
@@ -71,10 +74,6 @@ angular.module('DisignStudio')
         $('#video2').get(0).currentTime = currentTime;
       }
       $('#video2').get(0).play();
-      // $location.hash('video2');
-      // $anchorScroll();
-
-
     }
 
     $scope.getIcon = function (roomId) {

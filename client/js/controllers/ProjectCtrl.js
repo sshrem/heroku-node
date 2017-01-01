@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('DisignStudio')
-  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData) {
+  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $location, $anchorScroll) {
 
     angular.element(document).ready(function () {
       $('.modal-trigger').leanModal();
