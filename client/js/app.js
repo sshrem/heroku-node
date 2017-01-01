@@ -76,4 +76,10 @@ app.controller('MainController', function($scope, $translate) {
   $scope.changeLanguage = function (key) {
       $translate.use(key);
   };
+
+  $(document).ready(function () {
+      $('.button-collapse').sideNav();
+      $('.parallax').parallax();
+  });
+
 });

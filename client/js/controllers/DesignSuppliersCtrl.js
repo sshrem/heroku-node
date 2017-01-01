@@ -14,8 +14,7 @@ angular.module('DisignStudio')
     $location.hash('apartment-nav');
     $anchorScroll();
 
-
-      $(document).ready(function () {
+    $(document).ready(function () {
       $('.tooltipped').tooltip({delay: 50});
       $('.collapsible').collapsible();
     });
