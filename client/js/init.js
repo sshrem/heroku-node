@@ -6,3 +6,9 @@
 
 ga('create', 'UA-88005767-1', 'auto');
 ga('send', 'pageview');
+
+
+$(document).ready(function () {
+    $('.button-collapse').sideNav();
+    $('.parallax').parallax();
+});
