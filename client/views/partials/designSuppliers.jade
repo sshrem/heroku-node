@@ -1,15 +1,10 @@
-div#video-div.row.animate-show(ng-show="showVideoDiv")
-    div.col.s12.m8.offset-m2
-        div.card.white.grey-text.text-darken-2
-            div.card-content
-                h6.hebrew
-            div.card-image
-                cl-video#video2.ds-imaging(public-id="{{videoList[2]}}"  preload="none" controls )
-                    cl-video-transformation(overlay="{{videoList[1]}}" flags="splice")
-                    cl-video-transformation(overlay="{{videoList[3]}}" flags="splice")
-
+div#video-div.row
+    div.col.s12.m6.offset-m3.ds-design-item
+        cl-video#video2.ds-imaging(public-id="{{videoList[2]}}"  preload="none" controls)
+            cl-video-transformation(overlay="{{videoList[1]}}" flags="splice")
+            cl-video-transformation(overlay="{{videoList[3]}}" flags="splice")
 div.row
-    form.col.s12(name="roomsItems" )
+    form.col.s12.m8.offset-m2.ds-design-item(name="roomsItems" )
         ul.collapsible(data-collapsible="expandable" )
             li(ng-repeat="room in roomItems" track by $index)
                 div.collapsible-header
@@ -25,8 +20,8 @@ div.row
                             label(for="radio_{{$parent.$index}}_{{$index}}")
                             cl-image(public-id="{{item.imgCode}}"  width="50" crop="scale" format="png" quality="80" )
                             |  {{item.name}}
-div.row
-    div.col.s4.offset-s4
-        button.btn.waves-effect.ds-green-background(type="submit" name="action" ng-click="playDesignVideo()" )
-            | {{'visualization' | translate}}
-            i.material-icons.right send
+//div.row
+//    div.col.s4.offset-s4
+//        button.btn.waves-effect.ds-green-background(type="submit" name="action" ng-click="playDesignVideo()" )
+//            | {{'visualization' | translate}}
+//            i.material-icons.right send

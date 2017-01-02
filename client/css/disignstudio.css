@@ -16,10 +16,6 @@
     /*height: 100px !important;*/
 /*}*/
 
-.view-holder {
-    margin-top: 50px;
-}
-
 .ds-menu-item {
     padding-top: 50px !important;
     padding-left: 15px !important;
@@ -102,6 +98,14 @@
 .ds-background-image{
     higth: 20%;
     width: 20%;
+}
+
+.ds-design-item{
+    padding:0px !important;
+}
+
+#video-div {
+    margin-bottom: 0px;
 }
 
 

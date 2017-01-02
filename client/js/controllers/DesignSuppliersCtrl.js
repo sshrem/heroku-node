@@ -9,7 +9,6 @@ angular.module('DisignStudio')
 
     $scope.roomItems;
     $scope.allSuppliers;
-    $scope.showVideoDiv = false;
     $scope.videoList=[];
     $location.hash('apartment-nav');
     $anchorScroll();
@@ -37,13 +36,12 @@ angular.module('DisignStudio')
 
     $scope.changeDesignVideo = function(){
       var isPaused = $('#video2').get(0).paused;
-      if (!isPaused){
+      // if (!isPaused){
         $scope.playDesignVideo();
-      }
+      // }
 
     };
     $scope.playDesignVideo = function () {
-      $scope.showVideoDiv=true;
       var mp4Url = Cloudinary.url($scope.videoList[2], {resource_type: 'video', format: 'mp4',
         transformation: [
           {overlay: $scope.videoList[1], flags: "splice"},
