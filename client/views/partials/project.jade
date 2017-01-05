@@ -1,5 +1,5 @@
 div.row
-    div.col.s12.m5.offset-m2
+    div.col.s12.m8
         div.row
             div.col.s12.m6(ng-repeat="apt in apartments")
                 div.card.s12.m3
@@ -10,7 +10,7 @@ div.row
                         a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
                         a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
 
-    div.col.s12.m3.ds-project-tabs
+    div.col.s12.m4.ds-project-tabs
         ul.tabs
             li.tab.col.s4.m1
                 a.active.ds-green(href="#aboutCompany") {{'company' | translate}}
