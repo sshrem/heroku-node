@@ -1,13 +1,7 @@
 doctype html
-//if lt IE 7
-  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en', ng-app='DisignStudio')
-//if IE 7
-  html.no-js.lt-ie9.lt-ie8(lang='en', ng-app='DisignStudio')
-//if IE 8
-  html.no-js.lt-ie9(lang='en', ng-app='DisignStudio')
-// [if gt IE 8] <!
 html(lang='en', ng-app='DisignStudio').no-js
-    //- <![endif]
+    script(src="../bower_components/angular-translate/angular-translate.min.js")
+
     head
         base(href='/')
         meta(charset='utf-8')
@@ -92,7 +86,7 @@ html(lang='en', ng-app='DisignStudio').no-js
                         h3.center
                             i.mdi-content-send
                         h4 {{'contact-us' | translate}}
-                        p.left-align.light Please contact us at shimon@disignstudio.com
+                        p.left-align.light {{'contact-us-messege' | translate}}
         div.parallax-container.valign-wrapper
             div.parallax
                 img.ds-background-image(ng-src="images/design4.jpg")
