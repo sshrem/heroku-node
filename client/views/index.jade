@@ -1,13 +1,14 @@
 doctype html
 html(lang='en', ng-app='DisignStudio').no-js
-    script(src="../bower_components/angular-translate/angular-translate.min.js")
+    script(src="../bower_components/jquery/dist/jquery.min.js")
     script(src="../bower_components/angular/angular.js")
+    script(src="../bower_components/angular-translate/angular-translate.min.js")
     script(src="../bower_components/angular-sanitize/angular-sanitize.min.js")
     script(src="../bower_components/angular-route/angular-route.js")
     script(src="../bower_components/angular-ui-router/release/angular-ui-router.min.js")
     script(src="../bower_components/angular-translate/angular-translate.min.js")
     script(src="../bower_components/angular-animate/angular-animate.js")
-    script(src="../bower_components/jquery/dist/jquery.min.js")
+    script(src="../bower_components/angular-socialshare/dist/angular-socialshare.min.js")
     script(src="../bower_components/lodash/dist/lodash.min.js")
     script(src="../bower_components/materialize/dist/js/materialize.min.js")
     script(src="../bower_components/cloudinary/js/jquery.cloudinary.js")
@@ -59,8 +60,7 @@ html(lang='en', ng-app='DisignStudio').no-js
                         a(ng-click="changeLanguage('en')") EN
                     li
                         a(ng-click="changeLanguage('he')") עברית
-
-                a.button-collapse.ds-green( href="#" data-activates="nav-mobile")
+                a.button-collapse.ds-green(href="#" data-activates="nav-mobile")
                     i.material-icons menu
 
         div#index-banner.parallax-container

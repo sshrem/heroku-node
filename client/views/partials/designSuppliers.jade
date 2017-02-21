@@ -4,6 +4,9 @@ div#video-div.row
             cl-video-transformation(overlay="{{videoList[1]}}" flags="splice")
             cl-video-transformation(overlay="{{videoList[3]}}" flags="splice")
 div.row
+    a.col.offset-m3(socialshare socialshare-provider="facebook" socialshare-url="https://www.facebook.com/1848414988734528/videos/1848855945357099/")
+        img.ds-facebook-image(ng-src="../../images/Share-on-Facebook-SM-300x58.png")
+div.row
     form.col.s12.m8.offset-m2.ds-design-item(name="roomsItems" )
         ul.collapsible(data-collapsible="expandable" )
             li(ng-repeat="room in roomItems" track by $index)

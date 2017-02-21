@@ -13,9 +13,10 @@ var appTranslations = {
 		"visualization" : "Visualization",
 		"apartmentblueprint": "Apartment blueprint",
 		"main": "Main",
-        "contact-us": "Contact us",
-        "home-decor-marketplace": "Home Decor Marketplace",
-        "user-experience-focused" : "User Experience Focused"
+		 "contact-us": "Contact us",
+		 "contact-us-messege": "Please contact us at shimon@disignstudio.com",
+     "home-decor-marketplace": "Home Decor Marketplace",
+     "user-experience-focused" : "User Experience Focused"
 
 	},
 	"he": {
@@ -27,13 +28,14 @@ var appTranslations = {
 		"designs": "עיצובים",
 		"apartments" : "דירות",
 		"chooselivingroomfloor": "בחר ריצוף סלון ומטבח",
-		"choosebedroomfloor": "בחר עיצוב חדרי שינה",
+		"choosebedroomfloor": "בחר ריצוף חדרי שינה",
 		"choosebathroomcladding": "בחר חיפויים לאמבטיה",
 		"visualization": "הדמייה",
 		"apartmentblueprint": "תוכנית דירה",
-        "main": "ראשי",
-        "contact-us": "צור קשר",
-        "home-decor-marketplace": "מרקטפלייס לעיצוב פנים",
+    "main": "ראשי",
+    "contact-us": "צור קשר",
+    "contact-us-messege": "  shimon@disignstudio.com ניתן ליצור קשר במייל בכתובת",
+    "home-decor-marketplace": "מרקטפלייס לעיצוב פנים",
 		"user-experience-focused" : "חווית משתמש"
 	},
 	"ru": {

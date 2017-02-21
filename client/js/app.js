@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('DisignStudio', ['cloudinary','ui.router','ngSanitize', 'ngAnimate','pascalprecht.translate'])
+var app = angular.module('DisignStudio', ['cloudinary','ui.router','ngSanitize', 'ngAnimate','pascalprecht.translate', '720kb.socialshare'])
 
 app.filter("trustUrl", ['$sce', function($sce) {
   return function(url) {
@@ -51,6 +51,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   $rootScope.domain = "project-services.herokuapp.com";
 
   $rootScope.selected=[];
+  $rootScope.facebookAppId = '154124565100474';
 
   $rootScope.$on('$routeChangeSuccess', function() {
 

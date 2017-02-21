@@ -104,6 +104,11 @@
     padding:0px !important;
 }
 
+.ds-facebook-image{
+    higth: 50%;
+    width: 50%;
+}
+
 #video-div {
     margin-bottom: 0px;
 }
