@@ -8,6 +8,9 @@ angular.module('DisignStudio')
     var cloudinaryPath2= "video:projects:shikunbinuidpchk:";
 
     $scope.roomItems;
+    $scope.roomToWatch={
+      val: "test"
+    };
     $scope.allSuppliers;
     $scope.videoList=[];
     $location.hash('apartment-nav');
@@ -33,6 +36,9 @@ angular.module('DisignStudio')
       return path;
 
     }
+
+    $scope.changeRoomToWatch = function(index){
+    };
 
     $scope.changeDesignVideo = function(){
       var isPaused = $('#video2').get(0).paused;
