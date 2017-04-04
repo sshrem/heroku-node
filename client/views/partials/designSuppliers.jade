@@ -13,17 +13,17 @@ div#video-div.row
                         input.with-gap.radio-green-light(id="roomToWatch_all"
                             name="roomToWatchGroup" type="radio"
                             ng-model="roomToWatch.val" ng-value="{{-1}}"
-                            ng-checked="true" ng-change="changeRoomToWatch('all')")
+                            ng-change="changeRoomToWatch(-1)")
                         label(for="roomToWatch_all")
                         | {{'allApartment' | translate}}
                     li(ng-repeat="room in roomItems" track by $index)
                         input.with-gap.radio-green-light(id="roomToWatch_{{$index}}"
                             name="roomToWatchGroup" type="radio"
-                            ng-model="roomToWatch.val" ng-value="$index" ng-change="changeRoomToWatch($index)")
+                        ng-model="roomToWatch.val" ng-value="room.roomId" ng-change="changeRoomToWatch(room.roomId)")
                         label(for="roomToWatch_{{$index}}")
                         i.material-icons {{getIcon(room.roomId)}}
 div.row
-    a.col.offset-m3(socialshare socialshare-provider="facebook" socialshare-url="https://www.facebook.com/1848414988734528/videos/1848855945357099/")
+    a.col.offset-m3(socialshare socialshare-provider="facebook" socialshare-url="{{facebookVideo.url}}")
         img.ds-facebook-image(ng-src="../../images/Share-on-Facebook-SM-300x58.png")
 div.row
     form.col.s12.m8.offset-m2.ds-design-item(name="roomsItems" )
