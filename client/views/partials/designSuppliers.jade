@@ -23,7 +23,7 @@ div#video-div.row
                         label(for="roomToWatch_{{$index}}")
                         i.material-icons {{getIcon(room.roomId)}}
 div.row
-    a.col.offset-m3(socialshare socialshare-provider="facebook" socialshare-url="{{facebookVideo.url}}")
+    a.col.offset-m3(socialshare socialshare-provider="facebook" socialshare-url="{{facebookVideo.url}}" ng-click="sendFacebookShareStatRequest()")
         img.ds-facebook-image(ng-src="../../images/Share-on-Facebook-SM-300x58.png")
 div.row
     form.col.s12.m8.offset-m2.ds-design-item(name="roomsItems" )

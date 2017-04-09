@@ -4,6 +4,8 @@ angular.module('DisignStudio')
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
     $scope.designRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
+    $scope.videoViewStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/recordVideoView';
+    $scope.facebookShareStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/recordFacebookShare';
 
     var cloudinaryPath = "projects/shikunbinuidpchk/";
     var cloudinaryPath2 = "video:projects:shikunbinuidpchk:";
@@ -21,6 +23,7 @@ angular.module('DisignStudio')
     $scope.videoLength=0
     $scope.videoStartTime=0;
     $scope.videoEndTime=0;
+    $scope.design;
 
     $('#video2').get(0).ontimeupdate = function(){
       var currentTime = this.currentTime;
@@ -76,6 +79,7 @@ angular.module('DisignStudio')
           var url = null;
           if (res.data && res.data.designs && res.data.designs.length>0) {
             var url = res.data.designs[0].facebookVideoUrl;
+            $scope.design = res.data.designs[0];
           }
           if (url != null){
             $scope.facebookVideo = {url: url};
@@ -85,6 +89,28 @@ angular.module('DisignStudio')
         }).error(function (e) {
         var a = 1;
       });
+    };
+
+    $scope.sendVideoViewStatRequest = function () {
+      var data = {
+        userId: "",
+        projectId: $stateParams.projId,
+        apartmentTemplateId: $stateParams.aptId,
+        roomId: $scope.roomToWatch.val,
+        designId: $scope.design.id,
+      };
+      $http.post($scope.videoViewStatRequestUrl, data);
+    };
+
+    $scope.sendFacebookShareStatRequest = function () {
+      var data = {
+        userId: "",
+        projectId: $stateParams.projId,
+        apartmentTemplateId: $stateParams.aptId,
+        roomId: $scope.roomToWatch.val,
+        designId: $scope.design.id,
+      };
+      $http.post($scope.facebookShareStatRequestUrl, data);
     };
 
 
@@ -98,13 +124,15 @@ angular.module('DisignStudio')
         $scope.videoEndTime = video.endTime;
       }
       $scope.playDesignVideo();
+      $scope.sendVideoViewStatRequest();
     };
 
     $scope.changeDesignVideo = function(){
       var isPaused = $('#video2').get(0).paused;
       // if (!isPaused){
       $scope.playDesignVideo();
-      $scope.getFacebookVideoUrl()
+      $scope.getFacebookVideoUrl();
+      $scope.sendVideoViewStatRequest();
       // }
 
     };
