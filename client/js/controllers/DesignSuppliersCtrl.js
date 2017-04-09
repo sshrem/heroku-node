@@ -193,7 +193,7 @@ angular.module('DisignStudio')
       }
     }
 
-    $('#video2').get(0).ended = function(){
+    $('#video2').get(0).onended = function(){
       $('#video2').get(0).currentTime = $scope.videoStartTime;
     }
 
