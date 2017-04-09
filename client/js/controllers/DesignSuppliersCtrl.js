@@ -82,6 +82,7 @@ angular.module('DisignStudio')
           if (res.data && res.data.designs && res.data.designs.length>0) {
             var url = res.data.designs[0].facebookVideoUrl;
             $scope.design = res.data.designs[0];
+            $scope.sendVideoViewStatRequest();
           }
           if (url != null){
             $scope.facebookVideo = {url: url};
@@ -89,8 +90,8 @@ angular.module('DisignStudio')
             $scope.facebookVideo = {url: $scope.defaultFacebookVideoUrl};
           }
         }).error(function (e) {
-        var a = 1;
-      });
+          var a = 1;
+        });
     };
 
     $scope.getUuid = function(){
@@ -149,7 +150,6 @@ angular.module('DisignStudio')
       // if (!isPaused){
       $scope.playDesignVideo();
       $scope.getFacebookVideoUrl();
-      $scope.sendVideoViewStatRequest();
       // }
 
     };
@@ -229,7 +229,6 @@ angular.module('DisignStudio')
       }
 
       $scope.getFacebookVideoUrl();
-      $scope.sendVideoViewStatRequest();
     }
 
     function init() {
