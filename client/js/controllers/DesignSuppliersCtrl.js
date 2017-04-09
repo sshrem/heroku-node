@@ -27,14 +27,6 @@ angular.module('DisignStudio')
     $scope.design;
     $scope.id;
 
-    $('#video2').get(0).ontimeupdate = function(){
-      var currentTime = this.currentTime;
-      if (currentTime >= $scope.videoEndTime){
-        this.pause();
-      }
-
-    }
-
     $location.hash('apartment-nav');
     $anchorScroll();
 
@@ -192,6 +184,19 @@ angular.module('DisignStudio')
       }
       $('#video2').get(0).play();
     }
+
+    $('#video2').get(0).ontimeupdate = function(){
+      var currentTime = this.currentTime;
+      if (currentTime >= $scope.videoEndTime){
+        this.pause();
+        $('#video2').get(0).currentTime = $scope.videoStartTime;
+      }
+    }
+
+    $('#video2').get(0).ended = function(){
+      $('#video2').get(0).currentTime = $scope.videoStartTime;
+    }
+
 
     $scope.getIcon = function (roomId) {
       switch (roomId) {
