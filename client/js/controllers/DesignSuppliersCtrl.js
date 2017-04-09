@@ -1,6 +1,7 @@
 angular.module('DisignStudio')
   .controller('DesignSuppliersCtrl', function ($rootScope, $scope, Cloudinary, designByRoomFilter, $window, $http,
-                                               $stateParams, debugData, $timeout, $location, $anchorScroll) {
+                                               $stateParams, debugData, $timeout, $location, $anchorScroll, uuid2,
+                                               $cookies, $cookieStore) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
     $scope.designRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
@@ -24,6 +25,7 @@ angular.module('DisignStudio')
     $scope.videoStartTime=0;
     $scope.videoEndTime=0;
     $scope.design;
+    $scope.id;
 
     $('#video2').get(0).ontimeupdate = function(){
       var currentTime = this.currentTime;
@@ -91,25 +93,40 @@ angular.module('DisignStudio')
       });
     };
 
-    $scope.sendVideoViewStatRequest = function () {
+    $scope.getUuid = function(){
+      if ($scope.id == null) {
+        $scope.id = $cookieStore.get("uuid");
+      }
+
+      if ($scope.id == null) {
+        $scope.id = uuid2.newuuid();
+        $cookieStore.put('uuid', $scope.id);
+      }
+
+      return $scope.id;
+    }
+
+    $scope.getRequestData = function () {
+
+      var uuid = $scope.getUuid();
       var data = {
-        userId: "",
+        userId: uuid,
+        entrepreneurUserId: "",
         projectId: $stateParams.projId,
         apartmentTemplateId: $stateParams.aptId,
         roomId: $scope.roomToWatch.val,
         designId: $scope.design.id,
       };
+      return data;
+    }
+
+    $scope.sendVideoViewStatRequest = function () {
+      var data = $scope.getRequestData();
       $http.post($scope.videoViewStatRequestUrl, data);
     };
 
     $scope.sendFacebookShareStatRequest = function () {
-      var data = {
-        userId: "",
-        projectId: $stateParams.projId,
-        apartmentTemplateId: $stateParams.aptId,
-        roomId: $scope.roomToWatch.val,
-        designId: $scope.design.id,
-      };
+      var data = $scope.getRequestData();
       $http.post($scope.facebookShareStatRequestUrl, data);
     };
 
@@ -212,6 +229,7 @@ angular.module('DisignStudio')
       }
 
       $scope.getFacebookVideoUrl();
+      $scope.sendVideoViewStatRequest();
     }
 
     function init() {

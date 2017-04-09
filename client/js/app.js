@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('DisignStudio', ['cloudinary','ui.router','ngSanitize', 'ngAnimate','pascalprecht.translate', '720kb.socialshare'])
+var app = angular.module('DisignStudio', ['cloudinary','ui.router','ngSanitize', 'ngAnimate','pascalprecht.translate', '720kb.socialshare', 'angularUUID2', 'ngCookies'])
 
 app.filter("trustUrl", ['$sce', function($sce) {
   return function(url) {
