@@ -48,7 +48,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
 
   $rootScope.isDebugMode = false;
   // $rootScope.domain = "127.0.0.1:8082";
-  $rootScope.domain = "project-services.herokuapp.com";
+  $rootScope.domain = "projects.disignstudio.com";
 
   $rootScope.selected=[];
   $rootScope.facebookAppId = '154124565100474';
