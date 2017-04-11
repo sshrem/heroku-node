@@ -1,42 +1,6 @@
 doctype html
 html(lang='en', ng-app='DisignStudio').no-js
-    script(src="../bower_components/jquery/dist/jquery.min.js")
-    script(src="../bower_components/angular/angular.js")
-    script(src="../bower_components/angular-translate/angular-translate.min.js")
-    script(src="../bower_components/angular-sanitize/angular-sanitize.min.js")
-    script(src="../bower_components/angular-route/angular-route.js")
-    script(src="../bower_components/angular-ui-router/release/angular-ui-router.min.js")
-    script(src="../bower_components/angular-translate/angular-translate.min.js")
-    script(src="../bower_components/angular-animate/angular-animate.js")
-    script(src="../bower_components/angular-socialshare/dist/angular-socialshare.min.js")
-    script(src="../bower_components/lodash/dist/lodash.min.js")
-    script(src="../bower_components/materialize/dist/js/materialize.min.js")
-    script(src="../bower_components/cloudinary/js/jquery.cloudinary.js")
-    script(src="../bower_components/angular.uuid2/dist/angular-uuid2.js")
-    script(src="../bower_components/angular-cookies/angular-cookies.js")
-    script(src="../lib/cloudinary-angular.js")
-    script(src="../lib/mixpanel.js")
-    script(src="../js/translations.js")
-    script(src="../js/app.js")
-    script(src="../js/controllers/ProjectCtrl.js")
-    script(src="../js/controllers/NavCtrl.js")
-    script(src="../js/controllers/DesignCtrl.js")
-    script(src="../js/controllers/DesignSuppliersCtrl.js")
-    script(src="../js/directives/navbar.js")
-    script(src="../js/services/DebugData.js")
-    script(src="../js/config.js")
-    script(src="../js/init.js")
-
-    head
-        base(href='/')
-        meta(charset='utf-8')
-        title DisignStudio
-        meta(name='description', content='')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        link(href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-        link(rel="stylesheet", href="../bower_components/materialize/dist/css/materialize.min.css")
-        link(rel="stylesheet", href="../css/disignstudio.css")
-        link(rel="stylesheet", href="../css/style.css")
+    include header
     body(ng-controller='MainController')
         nav.black(role="navigation")
             div.nav-wrapper.container
@@ -67,6 +31,20 @@ html(lang='en', ng-app='DisignStudio').no-js
         div#index-banner.parallax-container
             div.parallax
                 img.ds-background-image(ng-src="images/design1.jpg")
+        div#projects.container
+            div.section
+                div.row
+                    div.col.s12.center
+                        div.icon-block.ds-gray
+                            h3.center
+                                i.material-icons home
+                            h4 {{'projects' | translate}}
+        menu-bar
+        div#viewHolder.view-holder(ui-view)
+
+        div.parallax-container
+            div.parallax
+                img.ds-background-image(ng-src="images/design2.jpg")
         div.container
             div.section
                 <!--   Icon Section   -->
@@ -83,19 +61,6 @@ html(lang='en', ng-app='DisignStudio').no-js
                                 i.material-icons video_library
                             h5.center {{'user-experience-focused' | translate}}
                             p.light Disign Studio offers a marketplace where apartment purchases and home furnishing suppliers are met. The company brings the leading brands from all areas include kitchens, living rooms, dining tables, bedrooms, closets, bathroom fixtures, ceramics, tiles, light fixtures and curtains.
-        div.parallax-container
-            div.parallax
-                img.ds-background-image(ng-src="images/design2.jpg")
-        div#projects.container
-            div.section
-                div.row
-                    div.col.s12.center
-                        div.icon-block.ds-gray
-                            h3.center
-                                i.material-icons home
-                            h4 {{'projects' | translate}}
-        menu-bar
-        div#viewHolder.view-holder(ui-view)
 
         div.parallax-container
             div.parallax
