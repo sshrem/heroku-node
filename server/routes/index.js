@@ -7,7 +7,7 @@ module.exports = function (app, config) {
     app.get('/api/project', content.loadProject);
     app.get('/api/designs', content.loadDesigns);
     app.get('/api/config', index.config);
-    app.get('/project', index.project);
+    app.get('/projects', index.projects);
     app.get('/', index.index);
     app.get('/index', index.index);
     app.get('/partials/*', index.partials);

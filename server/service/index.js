@@ -41,8 +41,8 @@ exports.index = function (req, res) {
     });
 };
 
-exports.project = function (req, res) {
-    res.render('layout', {
+exports.projects = function (req, res) {
+    res.render('projects', {
         env: config.env
     }, function (err, html) {
         if (err)
