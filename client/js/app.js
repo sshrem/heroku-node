@@ -28,9 +28,14 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
 
   $stateProvider
     .state('project', {
-      url: '/',
-      templateUrl: '/partials/project',
-      controller: 'ProjectCtrl'
+        url: '/',
+        templateUrl: '/partials/project_full',
+        controller: 'ProjectCtrl'
+    })
+    .state('projectWindow', {
+          url: '/projectWindow/:projId',
+          templateUrl: '/partials/project',
+          controller: 'ProjectCtrl'
     })
     .state('designs', {
       url: '/designs/:projId/:aptId/:itemFilters',

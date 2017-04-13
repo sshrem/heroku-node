@@ -1,37 +1,3 @@
-div.row
-    div.col.s12.m8
-        div.row
-            div.col.s12.m6(ng-repeat="apt in apartments")
-                div.card.s12.m3
-                    div.card-image
-                        cl-image(public-id="{{apt.image}}" format="png" quality="80")
-                    div.light-green.card-content.center-align
-                        h6.hebrew.white-text {{apt.name}}
-                        a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
-                        a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
-
-    div.col.s12.m4.ds-project-tabs
-        ul.tabs
-            li.tab.col.s4.m1
-                a.active.ds-green(href="#aboutCompany") {{'company' | translate}}
-            li.tab.col.s5.m1
-                a.ds-green(href="#aboutProject") {{'project' | translate}}
-            li.tab.col.s5.m1
-                a.ds-green(href="#features") {{'features' | translate}}
-        div#aboutCompany.hebrew
-            cl-image(public-id="{{project.entrepreneurCachedData.logo}}"   format="png" quality="80" )
-            div.ds-gray(ng-bind-html="project.entrepreneurCachedData.about")
-        div#aboutProject.hebrew
-            a(ng-click="openProjectModal()")
-                cl-image(public-id="{{project.imageUrl}}"  width="300" crop="scale" format="png" quality="80" )
-            div.ds-gray(ng-bind-html="project.about")
-        div#features.hebrew
-            p
-                div(ng-repeat="feat in project.features")
-                    i.material-icons.ds-feature-icon.ds-green check
-                    span.ds-feature.hebrew.ds-gray {{feat}}
-
-
 // Project Images Modal
 div#projectModal.modal
     i.modal-close.material-icons.right cancel
@@ -49,3 +15,17 @@ div#AptModal.modal
             ul.slides
                 li
                     cl-image(public-id="{{selectedApartment}}" format="png" quality="80")
+
+
+
+div.row
+    div.col.s12
+        div.row
+            div.col.s12.m6(ng-repeat="apt in apartments")
+                div.card.s12.m3
+                    div.card-image
+                        cl-image(public-id="{{apt.image}}" format="png" quality="80")
+                    div.light-green.card-content.center-align
+                        h6.hebrew.white-text {{apt.name}}
+                        a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
+                        a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})") {{'designs' | translate}}
