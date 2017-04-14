@@ -104,7 +104,7 @@ angular.module('DisignStudio')
       var uuid = $scope.getUuid();
       var data = {
         userId: uuid,
-        entrepreneurUserId: "",
+        entrepreneurUserId: $rootScope.entrepreneurUserId,
         projectId: $stateParams.projId,
         apartmentTemplateId: $stateParams.aptId,
         roomId: $scope.roomToWatch.val,

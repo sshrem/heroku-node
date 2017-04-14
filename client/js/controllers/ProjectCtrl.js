@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('DisignStudio')
-  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $location, $anchorScroll) {
+  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $stateParams, $cookieStore) {
 
     angular.element(document).ready(function () {
       $('.modal-trigger').leanModal();
@@ -13,6 +13,14 @@ angular.module('DisignStudio')
     $scope.project;
     $scope.apartments;
     $scope.selectedApartment;
+
+    if ($stateParams.projId!=null && $stateParams.projId.length>0){
+      $scope.projectCode = $stateParams.projId;
+    }
+
+    if ($stateParams.entrUserId!=null && $stateParams.entrUserId.length>0){
+      $rootScope.entrepreneurUserId = $stateParams.entrUserId;
+    }
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
 

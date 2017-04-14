@@ -33,7 +33,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
         controller: 'ProjectCtrl'
     })
     .state('project', {
-          url: '/project/:projId/:uid',
+          url: '/project/:projId/:entrUserId',
           templateUrl: '/partials/project',
           controller: 'ProjectCtrl'
     })
@@ -57,6 +57,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
 
   $rootScope.selected=[];
   $rootScope.facebookAppId = '154124565100474';
+  $rootScope.entrepreneurUserId="";
 
   $rootScope.$on('$routeChangeSuccess', function() {
 
