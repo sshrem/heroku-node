@@ -24,16 +24,16 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   }
   $translateProvider.preferredLanguage('he');
 
-  $urlRouterProvider.otherwise('/')
+  $urlRouterProvider.otherwise('/main/')
 
   $stateProvider
-    .state('project', {
-        url: '/',
+    .state('main', {
+        url: '/main/:projId',
         templateUrl: '/partials/project_full',
         controller: 'ProjectCtrl'
     })
-    .state('projectWindow', {
-          url: '/projectWindow/:projId',
+    .state('project', {
+          url: '/project/:projId/:uid',
           templateUrl: '/partials/project',
           controller: 'ProjectCtrl'
     })

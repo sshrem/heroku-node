@@ -4,7 +4,7 @@ html(lang='en', ng-app='DisignStudio').no-js
     body(ng-controller='MainController')
         nav.black(role="navigation")
             div.nav-wrapper.container
-                a#logo-container.brand-logo(href="index#")
+                a#logo-container.brand-logo(href="index/#")
                     img.ds-logo(ng-src="images/logo-transparent-without-slogen.png")
                 ul.right.hide-on.hide-on-med-and-down
                     li
@@ -39,7 +39,7 @@ html(lang='en', ng-app='DisignStudio').no-js
                             h3.center
                                 i.material-icons home
                             h4 {{'projects' | translate}}
-        menu-bar(navaprt="project")
+        menu-bar(navaprt="main")
         div#viewHolder.view-holder(ui-view)
 
         div.parallax-container
