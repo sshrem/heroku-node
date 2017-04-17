@@ -24,11 +24,11 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   }
   $translateProvider.preferredLanguage('he');
 
-  $urlRouterProvider.otherwise('/main/')
+  $urlRouterProvider.otherwise('/index/')
 
   $stateProvider
-    .state('main', {
-        url: '/main/:projId',
+    .state('index', {
+        url: '/index/:projId',
         templateUrl: '/partials/project_full',
         controller: 'ProjectCtrl'
     })
