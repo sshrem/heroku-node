@@ -49,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
     })
 })
 
-.run(function($rootScope, $window) {
+.run(function($rootScope, $window, uuid2, $cookies, $cookieStore) {
 
   $rootScope.isDebugMode = false;
   // $rootScope.domain = "127.0.0.1:8082";
@@ -58,6 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   $rootScope.selected=[];
   $rootScope.facebookAppId = '154124565100474';
   $rootScope.entrepreneurUserId="";
+  $rootScope.uuid;
 
   $rootScope.$on('$routeChangeSuccess', function() {
 
@@ -67,6 +68,20 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
     $rootScope.locationsHistory.push($location.path());
     $rootScope.locationsHistory.slice(3);
   });
+
+  $rootScope.getUuid = function(){
+    if ($rootScope.uuid == null) {
+      $rootScope.uuid = $cookieStore.get("uuid");
+    }
+
+    if ($rootScope.uuid == null) {
+      $rootScope.uuid = uuid2.newuuid();
+      $cookieStore.put('uuid', $rootScope.uuid);
+    }
+
+    return $rootScope.uuid;
+  }
+
 })
 
 app.controller('MainController', function($scope, $translate) {

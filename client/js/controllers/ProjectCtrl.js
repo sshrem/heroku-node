@@ -8,6 +8,8 @@ angular.module('DisignStudio')
       $('ul.tabs').tabs();
       $('.slider').slider({full_width: false});
     });
+    var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
+    $scope.visitStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/recordVisit';
 
     $scope.projectCode = 3;
     $scope.project;
@@ -22,7 +24,6 @@ angular.module('DisignStudio')
       $rootScope.entrepreneurUserId = $stateParams.entrUserId;
     }
 
-    var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
 
     var buildApartmentsArray = function () {
       $scope.apartments = $scope.project.apartmentTemplateCachedData;
@@ -37,6 +38,23 @@ angular.module('DisignStudio')
       $('#projectModal').openModal();
     }
 
+    $scope.getRequestData = function () {
+      var uuid = $rootScope.getUuid();
+      var data = {
+        userId: uuid,
+        entrepreneurUserId: $rootScope.entrepreneurUserId,
+        projectId: $scope.projectCode,
+        page: $state.current.name
+      };
+      return data;
+    }
+
+    $scope.sendVisitStatRequest = function () {
+      var data = $scope.getRequestData();
+      $http.post($scope.visitStatRequestUrl, data);
+    };
+
+
     function init() {
       if ($rootScope.isDebugMode) {
         $scope.project = debugData.debugData.project;
@@ -50,6 +68,7 @@ angular.module('DisignStudio')
           if (res.data) {
             $scope.project = res.data;
             buildApartmentsArray();
+            $scope.sendVisitStatRequest();
           }
         }).error(function (e) {
           //

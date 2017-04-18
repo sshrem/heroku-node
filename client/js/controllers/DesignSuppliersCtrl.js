@@ -1,7 +1,6 @@
 angular.module('DisignStudio')
   .controller('DesignSuppliersCtrl', function ($rootScope, $scope, Cloudinary, designByRoomFilter, $window, $http,
-                                               $stateParams, debugData, $timeout, $location, $anchorScroll, uuid2,
-                                               $cookies, $cookieStore) {
+                                               $stateParams, debugData, $timeout, $location, $anchorScroll) {
 
     var initRequestUrl = 'http://' + $rootScope.domain + '/api/designsFilters';
     $scope.designRequestUrl = 'http://' + $rootScope.domain + '/api/designs';
@@ -25,7 +24,6 @@ angular.module('DisignStudio')
     $scope.videoStartTime=0;
     $scope.videoEndTime=0;
     $scope.design;
-    $scope.id;
 
     $location.hash('apartment-nav');
     $anchorScroll();
@@ -86,22 +84,8 @@ angular.module('DisignStudio')
         });
     };
 
-    $scope.getUuid = function(){
-      if ($scope.id == null) {
-        $scope.id = $cookieStore.get("uuid");
-      }
-
-      if ($scope.id == null) {
-        $scope.id = uuid2.newuuid();
-        $cookieStore.put('uuid', $scope.id);
-      }
-
-      return $scope.id;
-    }
-
     $scope.getRequestData = function () {
-
-      var uuid = $scope.getUuid();
+      var uuid = $rootScope.getUuid();
       var data = {
         userId: uuid,
         entrepreneurUserId: $rootScope.entrepreneurUserId,
