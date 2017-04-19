@@ -8,7 +8,7 @@ app.filter("trustUrl", ['$sce', function($sce) {
   };
 }])
 
-app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, CloudinaryProvider, $locationProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, CloudinaryProvider) {
 
   $httpProvider.defaults.useXDomain = true;
 
@@ -48,7 +48,6 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
       controller: 'DesignSuppliersCtrl'
     });
 
-  $locationProvider.html5Mode(true);
 })
 
 .run(function($rootScope, $window, uuid2, $cookies, $cookieStore) {
