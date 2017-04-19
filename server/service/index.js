@@ -52,6 +52,17 @@ exports.projects = function (req, res) {
     });
 };
 
+exports.stats = function (req, res) {
+    res.render('stats', {
+        env: config.env
+    }, function (err, html) {
+        if (err)
+            console.log(err);
+        else
+            res.send(html);
+    });
+};
+
 exports.config = function (req, res) {
     res.json(config);
 };

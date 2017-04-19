@@ -1,0 +1,13 @@
+doctype html
+html(lang='en', ng-app='DisignStudio').no-js
+    include header
+    script(src="../bower_components/highcharts/highcharts.js")
+    script(src="../bower_components/highcharts-ng/dist/highcharts-ng.js")
+    script(src="../js/controllers/StatsCtrl.js")
+
+    body(ng-controller='StatsCtrl')
+        highchart#chart1(config="chartConfig1" style="width:95%; height:400px;")
+        hr
+        highchart#chart2(config="chartConfig2" style="width:95%; height:400px;")
+        hr
+        highchart#chart3(config="chartConfig3" style="width:95%; height:400px;")
