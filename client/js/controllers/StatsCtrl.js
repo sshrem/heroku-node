@@ -22,6 +22,13 @@ angular.module('DisignStudio')
           text: ''
         }
       },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
       credits: {
         enabled: false
       },
@@ -49,6 +56,13 @@ angular.module('DisignStudio')
       credits: {
         enabled: false
       },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true
+          }
+        }
+      },
       series: [{
         name: 'Video View',
         data: [0, 0, 0]
@@ -72,6 +86,13 @@ angular.module('DisignStudio')
       },
       credits: {
         enabled: false
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true
+          }
+        }
       },
       series: [{
         name: 'Facebook Share',
