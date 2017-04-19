@@ -8,7 +8,7 @@ app.filter("trustUrl", ['$sce', function($sce) {
   };
 }])
 
-app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, CloudinaryProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translateProvider, CloudinaryProvider, $locationProvider) {
 
   $httpProvider.defaults.useXDomain = true;
 
@@ -46,12 +46,15 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
       url: '/designSuppliers/:projId/:aptId',
       templateUrl: "/partials/designSuppliers",
       controller: 'DesignSuppliersCtrl'
-    })
+    });
+
+  $locationProvider.html5Mode(true);
 })
 
 .run(function($rootScope, $window, uuid2, $cookies, $cookieStore) {
 
   $rootScope.isDebugMode = false;
+  $rootScope.shouldSendStats = true;
   // $rootScope.domain = "127.0.0.1:8082";
   $rootScope.domain = "projects.disignstudio.com";
 
