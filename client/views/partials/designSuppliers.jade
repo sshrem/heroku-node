@@ -1,6 +1,6 @@
 div#video-div.row
     div.col.s12.m6.offset-m3.ds-design-item
-        cl-video#video2.ds-imaging(public-id="{{videoList[2]}}"  preload="none" controls)
+        cl-video#video2.ds-imaging(public-id="{{videoList[2]}}"  preload="none" controls autoplay)
             cl-video-transformation(overlay="{{videoList[1]}}" flags="splice")
             cl-video-transformation(overlay="{{videoList[3]}}" flags="splice")
     ul.col.s12.m3.collapsible(data-collapsible="expandable" )
