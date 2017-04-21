@@ -24,7 +24,7 @@ div.row
             div.col.s12.m6(ng-repeat="apt in apartments")
                 div.card.s12.m3
                     div.card-image
-                        cl-image(public-id="{{apt.image}}" format="png" quality="80" ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})")
+                        cl-image(public-id="{{apt.image}}" format="png" overlay="common:play2" quality="80" ui-sref="designSuppliers({projId: {{projectCode}}, aptId:{{apt.id}}})")
                     div.light-green.card-content.center-align
                         h6.hebrew.white-text {{apt.name}}
                         a.waves-effect.grey-text.ds-gray.waves-teal.btn-flat(ng-click="openApartmentModal(apt.image)") {{'apartmentblueprint' | translate}}
