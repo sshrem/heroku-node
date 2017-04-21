@@ -197,8 +197,6 @@ app.factory('debugData', function () {
       },
 
 
-
-
       designSupplier:{
           "title": "דירת 4 חדרים | טיפוס B2",
           "suppliers": [
@@ -352,6 +350,30 @@ app.factory('debugData', function () {
         "rooms": {
           "2": "livingroom",
           "4": "bedroom"
+        }
+      },
+
+      stats : {
+        "videoViewStats": {
+          "count": 100,
+          "userCount": 8,
+          "entrepreneurUserCount": 2,
+          "averagePerUser": 12.5,
+          "averagePerEntrepreneurUser": 50.0
+        },
+        "visitStats": {
+          "count": 27,
+          "userCount": 8,
+          "entrepreneurUserCount": 1,
+          "averagePerUser": 3.375,
+          "averagePerEntrepreneurUser": 27.0
+        },
+        "facebookShareStats": {
+          "count": 2,
+          "userCount": 1,
+          "entrepreneurUserCount": 1,
+          "averagePerUser": 2.0,
+          "averagePerEntrepreneurUser": 2.0
         }
       }
     }
