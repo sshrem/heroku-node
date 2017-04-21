@@ -98,13 +98,17 @@ angular.module('DisignStudio')
     }
 
     $scope.sendVideoViewStatRequest = function () {
-      var data = $scope.getRequestData();
-      $http.post($scope.videoViewStatRequestUrl, data);
+      if ($rootScope.shouldSendStats){
+        var data = $scope.getRequestData();
+        $http.post($scope.videoViewStatRequestUrl, data);
+      }
     };
 
     $scope.sendFacebookShareStatRequest = function () {
-      var data = $scope.getRequestData();
-      $http.post($scope.facebookShareStatRequestUrl, data);
+      if ($rootScope.shouldSendStats){
+        var data = $scope.getRequestData();
+        $http.post($scope.facebookShareStatRequestUrl, data);
+      }
     };
 
 

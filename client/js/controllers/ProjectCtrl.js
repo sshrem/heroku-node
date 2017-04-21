@@ -50,8 +50,10 @@ angular.module('DisignStudio')
     }
 
     $scope.sendVisitStatRequest = function () {
-      var data = $scope.getRequestData();
-      $http.post($scope.visitStatRequestUrl, data);
+      if ($rootScope.shouldSendStats){
+        var data = $scope.getRequestData();
+        $http.post($scope.visitStatRequestUrl, data);
+      }
     };
 
 
