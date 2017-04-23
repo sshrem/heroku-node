@@ -10,7 +10,7 @@ var
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('errorhandler'),
-    session = require('express-session'),
+    session = require('cookie-session'),
     path = require('path');
 
 module.exports = function (app, config) {
@@ -24,7 +24,11 @@ module.exports = function (app, config) {
     app.use(bodyParser.json({limit: '50mb'}));
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(cookieParser());
-    app.use(session({secret: 'seshen'}));
+    app.use(session({
+      secret: 'seshen',
+      resave: true,
+      saveUninitialized: true
+    }));
     app.use(cors({credentials: true, origin: true}));
     app.use(methodOverride());
 
