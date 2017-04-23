@@ -18,6 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider, $translat
   });
   $.cloudinary.config({ cloud_name: 'disignstudio', api_key: '671623578364648'})
 
+  $translateProvider.useSanitizeValueStrategy('escape');
   var lang;
   for (lang in appTranslations) {
     $translateProvider.translations(lang, appTranslations[lang]);
