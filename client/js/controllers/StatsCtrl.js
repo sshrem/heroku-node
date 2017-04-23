@@ -7,8 +7,8 @@ angular.module('DisignStudio')
     var visitStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/projectStats';
     $scope.projectCode = 3;
 
-    if (projectIdParma != null && projectIdParma.length > 0) {
-      $scope.projectCode = projectIdParma;
+    if (projectIdParam != null && projectIdParam.length > 0) {
+      $scope.projectCode = projectIdParam;
     }
 
     $scope.chartConfig1 = {

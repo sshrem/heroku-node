@@ -2,7 +2,7 @@ doctype html
 html(lang='en', ng-app='DisignStudio')
   include header
   script.
-    var projectIdParma = !{JSON.stringify(projectId)}
+    var projectIdParam = !{JSON.stringify(projectId)}
   body(ng-controller='StatsCtrl')
     div
       highchart#chart1(config="chartConfig1" style="width:95%; height:200px;")
