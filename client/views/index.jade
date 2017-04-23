@@ -8,30 +8,30 @@ html(lang='en', ng-app='DisignStudio').no-js
                     img.ds-logo(ng-src="images/logo-transparent-without-slogen.png")
                 ul.right.hide-on.hide-on-med-and-down
                     li
-                        a(href="#/index/#projects") {{'projects' | translate}}
+                        a.ds-green(href="#/index/#projectsHome") {{'projects' | translate}}
                     li
-                        a(href="#/index/#contact-us") {{'contact-us' | translate}}
+                        a.ds-green(href="#/index/#contact-us") {{'contact-us' | translate}}
                     li
-                        a(ng-click="changeLanguage('en')") EN
+                        a.ds-green(ng-click="changeLanguage('en')") EN
                     li
-                        a(ng-click="changeLanguage('he')") עברית
+                        a.ds-green(ng-click="changeLanguage('he')") עברית
                 ul#nav-mobile.side-nav.black
                     li
-                        a(href="#/index") {{'main' | translate}}
+                        a.ds-green(href="#/index") {{'main' | translate}}
                     li
-                        a(href="#/index/#projects") {{'projects' | translate}}
+                        a.ds-green(href="#/index/#projectsHome") {{'projects' | translate}}
                     li
-                        a(href="#/index/#contact-us") {{'contact-us' | translate}}
+                        a.ds-green(href="#/index/#contact-us") {{'contact-us' | translate}}
                     li
-                        a(ng-click="changeLanguage('en')") EN
+                        a.ds-green(ng-click="changeLanguage('en')") EN
                     li
-                        a(ng-click="changeLanguage('he')") עברית
-                a.button-collapse.ds-green(href="#" data-activates="nav-mobile")
+                        a.ds-green(ng-click="changeLanguage('he')") עברית
+                a.button-collapse.ds-green(href="#/index" data-activates="nav-mobile")
                     i.material-icons menu
         div#index-banner.parallax-container
             div.parallax
                 img(ng-src="images/design1.jpg")
-        div#projects.container
+        div#projectsHome.container
             div.section
                 div.row
                     div.col.s12.center
