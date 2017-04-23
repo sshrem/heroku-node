@@ -22,8 +22,8 @@ var appTranslations = {
 	},
 	"he": {
 		"company": "יזם",
-		"project": "פרוייקט",
-		"projects": "פרוייקטים",
+		"project": "פרויקט",
+		"projects": "פרויקטים",
 		"features": "מפרט",
 		"images": "תמונות",
 		"designs": "עיצובים",
