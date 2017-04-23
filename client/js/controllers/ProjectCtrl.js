@@ -4,7 +4,7 @@ angular.module('DisignStudio')
   .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $stateParams, $cookieStore) {
 
     angular.element(document).ready(function () {
-      $('.modal-trigger').leanModal();
+      $('.modal').modal();
       $('ul.tabs').tabs();
       $('.slider').slider({full_width: false});
     });
@@ -31,11 +31,11 @@ angular.module('DisignStudio')
 
     $scope.openApartmentModal = function (aptTemplate) {
       $scope.selectedApartment = aptTemplate;
-      $('#AptModal').openModal();
+      $('#AptModal').modal('open');
     }
 
     $scope.openProjectModal = function () {
-      $('#projectModal').openModal();
+      $('#projectModal').modal('open');
     }
 
     $scope.getRequestData = function () {

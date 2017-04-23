@@ -2,13 +2,14 @@ div.row
     div.col.s12.m8
         include project
     div.col.s12.m4.ds-project-tabs
-        ul.tabs
-            li.tab.col.s4.m1
-                a.active.ds-green(href="#aboutCompany") {{'company' | translate}}
-            li.tab.col.s5.m1
-                a.ds-green(href="#aboutProject") {{'project' | translate}}
-            li.tab.col.s5.m1
-                a.ds-green(href="#features") {{'features' | translate}}
+        row
+            ul.tabs
+                li.tab.col.s4.m4
+                    a.active.ds-green(href="#aboutCompany") {{'company' | translate}}
+                li.tab.col.s4.m4
+                    a.ds-green(href="#aboutProject") {{'project' | translate}}
+                li.tab.col.s4.m4
+                    a.ds-green(href="#features") {{'features' | translate}}
         div#aboutCompany.hebrew
             cl-image(public-id="{{project.entrepreneurCachedData.logo}}"   format="png" quality="80" )
             div.ds-gray(ng-bind-html="project.entrepreneurCachedData.about")
