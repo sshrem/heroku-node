@@ -3,7 +3,7 @@
  */
 'use strict';
 angular.module('DisignStudio')
-  .controller('StatsCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $location, $routeParams, $stateParams) {
+  .controller('StatsCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData) {
     var visitStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/projectStats';
     $scope.projectCode = 3;
 
