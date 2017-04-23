@@ -1,9 +1,12 @@
 doctype html
-html(lang='en', ng-app='DisignStudio').no-js
-    include header
-    body(ng-controller='StatsCtrl')
-        highchart#chart1(config="chartConfig1" style="width:95%; height:200px;")
-        hr
-        highchart#chart2(config="chartConfig2" style="width:95%; height:200px;")
-        hr
-        highchart#chart3(config="chartConfig3" style="width:95%; height:200px;")
+html(lang='en', ng-app='DisignStudio')
+  include header
+  script.
+    var projectIdParma = !{JSON.stringify(projectId)}
+  body(ng-controller='StatsCtrl')
+    div
+      highchart#chart1(config="chartConfig1" style="width:95%; height:200px;")
+      hr
+      highchart#chart2(config="chartConfig2" style="width:95%; height:200px;")
+      hr
+      highchart#chart3(config="chartConfig3" style="width:95%; height:200px;")

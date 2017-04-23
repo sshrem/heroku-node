@@ -53,8 +53,11 @@ exports.projects = function (req, res) {
 };
 
 exports.stats = function (req, res) {
+    var projid = req.params.projid;
     res.render('stats', {
-        env: config.env
+        env: config.env,
+      projectId: projid
+
     }, function (err, html) {
         if (err)
             console.log(err);
