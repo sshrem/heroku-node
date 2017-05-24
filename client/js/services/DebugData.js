@@ -198,132 +198,162 @@ app.factory('debugData', function () {
 
 
       designSupplier:{
-          "title": "דירת 4 חדרים | טיפוס B2",
-          "suppliers": [
-            {
-              "id": 1,
-              "name": "זהבי עצמון",
-              "logo": "suppliers/zehavi/zehavi-logo",
-              "url": "http://www.zahavi.co.il/"
-            }
-          ],
-          "roomItems": [
-            {
-              "title": "chooselivingroomfloor",
-              "roomId": 2,
-              "items": [
-                {
-                  "offeringId": 5,
-                  "name": "Imperial Crema 60x60",
-                  "imgCode": "suppliers/zehavi/clearcrema.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 6,
-                  "name": "Manhatan Ivory 60x60",
-                  "imgCode": "suppliers/zehavi/manhatanivory.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 13,
-                  "name": "פרקט כרמל Classic Frontal",
-                  "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 14,
-                  "name": "Clear Tobbaco 60x60",
-                  "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
-                  "supplierId": 1
-                }
-              ]
-            },
-            {
-              "title": "choosebedroomfloor",
-              "roomId": 1,
-              "items": [
-                {
-                  "offeringId": 5,
-                  "name": "Imperial Crema 60x60",
-                  "imgCode": "suppliers/zehavi/clearcrema.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 6,
-                  "name": "Manhatan Ivory 60x60",
-                  "imgCode": "suppliers/zehavi/manhatanivory.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 13,
-                  "name": "פרקט כרמל Classic Frontal",
-                  "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 14,
-                  "name": "Clear Tobbaco 60x60",
-                  "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
-                  "supplierId": 1
-                }
-              ]
-            },
-            {
-              "title": "choosebathroomcladding",
-              "roomId": 3,
-              "items": [
-                {
-                  "offeringId": 10,
-                  "name": "Vetro Marfil 20x60",
-                  "imgCode": "suppliers/zehavi/vetromarfil.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 11,
-                  "name": "Rain White 20x50",
-                  "imgCode": "suppliers/zehavi/rainwhite.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 12,
-                  "name": "Ethos Gris 20x60",
-                  "imgCode": "suppliers/zehavi/ethosgris.jpg",
-                  "supplierId": 1
-                },
-                {
-                  "offeringId": 15,
-                  "name": "Ethos Moka",
-                  "imgCode": "suppliers/zehavi/ethosmoka.jpg",
-                  "supplierId": 1
-                }
-              ]
-            }
-          ],
-          "videosDetails": [
-            {
-              "roomId": 2,
-              "videoLength": 50,
-              "startTime": 0,
-              "endTime": 50,
-              "videoOrdinal": 0
-            },
-            {
-              "roomId": 1,
-              "videoLength": 45,
-              "startTime": 50,
-              "endTime": 95,
-              "videoOrdinal": 1
-            },
-            {
-              "roomId": 3,
-              "videoLength": 30,
-              "startTime": 95,
-              "endTime": 125,
-              "videoOrdinal": 2
-            }
-          ],
-          "defaultFacebookVideoUrl": "https://www.facebook.com/1848414988734528/videos/1848855945357099/"
-        },
+        "title": "דירת 4 חדרים | טיפוס B2",
+        "suppliers": [
+          {
+            "id": 1,
+            "name": "זהבי עצמון",
+            "logo": "suppliers/zehavi/zehavi-logo",
+            "url": "http://www.zahavi.co.il/"
+          }
+        ],
+        "roomItems": [
+          {
+            "title": "chooselivingroomfloor",
+            "roomId": 2,
+            "items": [
+              {
+                "offeringId": 5,
+                "name": "Imperial Crema 60x60",
+                "imgCode": "suppliers/zehavi/clearcrema.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 6,
+                "name": "Manhatan Ivory 60x60",
+                "imgCode": "suppliers/zehavi/manhatanivory.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 13,
+                "name": "פרקט כרמל Classic Frontal",
+                "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 14,
+                "name": "Clear Tobbaco 60x60",
+                "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
+                "supplierId": 1
+              }
+            ]
+          },
+          {
+            "title": "choosebedroomfloor",
+            "roomId": 1,
+            "items": [
+              {
+                "offeringId": 5,
+                "name": "Imperial Crema 60x60",
+                "imgCode": "suppliers/zehavi/clearcrema.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 6,
+                "name": "Manhatan Ivory 60x60",
+                "imgCode": "suppliers/zehavi/manhatanivory.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 13,
+                "name": "פרקט כרמל Classic Frontal",
+                "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 14,
+                "name": "Clear Tobbaco 60x60",
+                "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
+                "supplierId": 1
+              }
+            ]
+          },
+          {
+            "title": "choosebathroomcladding",
+            "roomId": 3,
+            "items": [
+              {
+                "offeringId": 10,
+                "name": "Vetro Marfil 20x60",
+                "imgCode": "suppliers/zehavi/vetromarfil.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 11,
+                "name": "Rain White 20x50",
+                "imgCode": "suppliers/zehavi/rainwhite.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 12,
+                "name": "Ethos Gris 20x60",
+                "imgCode": "suppliers/zehavi/ethosgris.jpg",
+                "supplierId": 1
+              },
+              {
+                "offeringId": 15,
+                "name": "Ethos Moka",
+                "imgCode": "suppliers/zehavi/ethosmoka.jpg",
+                "supplierId": 1
+              }
+            ]
+          },
+          {
+            "title": "choosekitchencupboard",
+            "roomId": 4,
+            "items": [
+              {
+                "offeringId": 21,
+                "name": "לבן קריסטל",
+                "imgCode": "suppliers/avivi/white.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 22,
+                "name": "אפור כסף",
+                "imgCode": "suppliers/avivi/silver.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 23,
+                "name": "קווארץ",
+                "imgCode": "suppliers/avivi/quartz.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 24,
+                "name": "וונגה סופט",
+                "imgCode": "suppliers/avivi/venga.png",
+                "supplierId": 3
+              }
+            ]
+          }
+        ],
+        "videosDetails": [
+          {
+            "roomId": 2,
+            "videoLength": 50,
+            "startTime": 0,
+            "endTime": 50,
+            "videoOrdinal": 0
+          },
+          {
+            "roomId": 1,
+            "videoLength": 45,
+            "startTime": 50,
+            "endTime": 95,
+            "videoOrdinal": 1
+          },
+          {
+            "roomId": 3,
+            "videoLength": 30,
+            "startTime": 95,
+            "endTime": 125,
+            "videoOrdinal": 2
+          }
+        ],
+        "defaultFacebookVideoUrl": "https://www.facebook.com/1848414988734528/videos/1848855945357099/"
+      },
 
 
       allDesigns: {
