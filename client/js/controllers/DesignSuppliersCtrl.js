@@ -40,8 +40,12 @@ angular.module('DisignStudio')
 
     $scope.getVideoValue = function (supplierId, roomId, offeringId) {
       $scope.roomOffering[roomId] = offeringId;
+      if (roomId == 4){ // kitchen - living room and kitchen in the same video
+        return "_" + roomId + "_" + offeringId;
+      }
+
       var path = cloudinaryPath2 + $stateParams.aptId + ":";
-      if (roomId == 2) {
+      if (roomId == 2) {  // living room - the first video
         path = cloudinaryPath + $stateParams.aptId + "/";
       }
       path = path + supplierId + "_" + roomId + "_" + offeringId;
@@ -134,7 +138,7 @@ angular.module('DisignStudio')
 
     };
     $scope.playDesignVideo = function () {
-      var mp4Url = Cloudinary.url($scope.videoList[2], {
+      var mp4Url = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
         resource_type: 'video', format: 'mp4',
         transformation: [
           {overlay: $scope.videoList[1], flags: "splice"},
@@ -142,7 +146,7 @@ angular.module('DisignStudio')
         ]
       });
 
-      var webmUrl = Cloudinary.url($scope.videoList[2], {
+      var webmUrl = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
         resource_type: 'video', format: 'webm',
         transformation: [
           {overlay: $scope.videoList[1], flags: "splice"},
@@ -150,7 +154,7 @@ angular.module('DisignStudio')
         ]
       });
 
-      var oggUrl = Cloudinary.url($scope.videoList[2], {
+      var oggUrl = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
         resource_type: 'video', format: 'ogg',
         transformation: [
           {overlay: $scope.videoList[1], flags: "splice"},
@@ -194,6 +198,8 @@ angular.module('DisignStudio')
           return "weekend";
         case 3:
           return "wc";
+        case 4:
+          return "kitchen";
         default:
           return "hotel";
 
