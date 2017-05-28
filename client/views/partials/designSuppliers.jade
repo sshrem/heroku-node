@@ -16,12 +16,12 @@ div#video-div.row
                             ng-change="changeRoomToWatch(-1)")
                         label(for="roomToWatch_all")
                         | {{'allApartment' | translate}}
-                    li(ng-repeat="room in roomItems" track by $index)
+                    li(ng-repeat="video in videoRoomList" track by $index)
                         input.with-gap.radio-green-light(id="roomToWatch_{{$index}}"
                             name="roomToWatchGroup" type="radio"
-                        ng-model="roomToWatch.val" ng-value="room.roomId" ng-change="changeRoomToWatch(room.roomId)")
+                        ng-model="roomToWatch.val" ng-value="video.roomId" ng-change="changeRoomToWatch(video.roomId)")
                         label(for="roomToWatch_{{$index}}")
-                        i.material-icons {{getIcon(room.roomId)}}
+                        i.material-icons {{getIcon(video.roomId)}}
 div.row
     a.col.offset-m2.m2(socialshare socialshare-provider="facebook" socialshare-url="{{facebookVideo.url}}" ng-click="sendFacebookShareStatRequest()")
         img.ds-facebook-image(ng-src="../../images/Share-on-Facebook-SM-300x58.png")

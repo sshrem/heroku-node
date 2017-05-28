@@ -20,6 +20,7 @@ angular.module('DisignStudio')
     $scope.defaultFacebookVideoUrl;
     $scope.facebookVideo = {url: null};
     $scope.videoDetails=[];
+    $scope.videoRoomList=[];
     $scope.videoLength=0
     $scope.videoStartTime=0;
     $scope.videoEndTime=0;
@@ -223,6 +224,7 @@ angular.module('DisignStudio')
       for (var room in data.videosDetails){
         var video = data.videosDetails[room];
         $scope.videoDetails[video.roomId] = video;
+        $scope.videoRoomList.push(video);
         $scope.videoLength = video.endTime;
         $scope.videoEndTime = video.endTime;
       }
