@@ -239,6 +239,36 @@ app.factory('debugData', function () {
             ]
           },
           {
+            "title": "choosekitchencupboard",
+            "roomId": 4,
+            "items": [
+              {
+                "offeringId": 21,
+                "name": "לבן קריסטל",
+                "imgCode": "suppliers/avivi/white.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 22,
+                "name": "אפור כסף",
+                "imgCode": "suppliers/avivi/silver.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 23,
+                "name": "קווארץ",
+                "imgCode": "suppliers/avivi/quartz.png",
+                "supplierId": 3
+              },
+              {
+                "offeringId": 24,
+                "name": "וונגה סופט",
+                "imgCode": "suppliers/avivi/venga.png",
+                "supplierId": 3
+              }
+            ]
+          },
+          {
             "title": "choosebedroomfloor",
             "roomId": 1,
             "items": [
@@ -295,36 +325,6 @@ app.factory('debugData', function () {
                 "name": "Ethos Moka",
                 "imgCode": "suppliers/zehavi/ethosmoka.jpg",
                 "supplierId": 1
-              }
-            ]
-          },
-          {
-            "title": "choosekitchencupboard",
-            "roomId": 4,
-            "items": [
-              {
-                "offeringId": 21,
-                "name": "לבן קריסטל",
-                "imgCode": "suppliers/avivi/white.png",
-                "supplierId": 3
-              },
-              {
-                "offeringId": 22,
-                "name": "אפור כסף",
-                "imgCode": "suppliers/avivi/silver.png",
-                "supplierId": 3
-              },
-              {
-                "offeringId": 23,
-                "name": "קווארץ",
-                "imgCode": "suppliers/avivi/quartz.png",
-                "supplierId": 3
-              },
-              {
-                "offeringId": 24,
-                "name": "וונגה סופט",
-                "imgCode": "suppliers/avivi/venga.png",
-                "supplierId": 3
               }
             ]
           }
