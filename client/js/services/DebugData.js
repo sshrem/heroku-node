@@ -229,12 +229,6 @@ app.factory('debugData', function () {
                 "name": "פרקט כרמל Classic Frontal",
                 "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
                 "supplierId": 1
-              },
-              {
-                "offeringId": 14,
-                "name": "Clear Tobbaco 60x60",
-                "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
-                "supplierId": 1
               }
             ]
           },
@@ -249,12 +243,6 @@ app.factory('debugData', function () {
                 "supplierId": 3
               },
               {
-                "offeringId": 22,
-                "name": "אפור כסף",
-                "imgCode": "suppliers/avivi/silver.png",
-                "supplierId": 3
-              },
-              {
                 "offeringId": 23,
                 "name": "קווארץ",
                 "imgCode": "suppliers/avivi/quartz.png",
@@ -265,36 +253,6 @@ app.factory('debugData', function () {
                 "name": "וונגה סופט",
                 "imgCode": "suppliers/avivi/venga.png",
                 "supplierId": 3
-              }
-            ]
-          },
-          {
-            "title": "choosebedroomfloor",
-            "roomId": 1,
-            "items": [
-              {
-                "offeringId": 5,
-                "name": "Imperial Crema 60x60",
-                "imgCode": "suppliers/zehavi/clearcrema.jpg",
-                "supplierId": 1
-              },
-              {
-                "offeringId": 6,
-                "name": "Manhatan Ivory 60x60",
-                "imgCode": "suppliers/zehavi/manhatanivory.jpg",
-                "supplierId": 1
-              },
-              {
-                "offeringId": 13,
-                "name": "פרקט כרמל Classic Frontal",
-                "imgCode": "suppliers/zehavi/Carmel_Classic_Frontal.jpg",
-                "supplierId": 1
-              },
-              {
-                "offeringId": 14,
-                "name": "Clear Tobbaco 60x60",
-                "imgCode": "suppliers/zehavi/cleartobbaco_.jpg",
-                "supplierId": 1
               }
             ]
           },
@@ -318,12 +276,6 @@ app.factory('debugData', function () {
                 "offeringId": 12,
                 "name": "Ethos Gris 20x60",
                 "imgCode": "suppliers/zehavi/ethosgris.jpg",
-                "supplierId": 1
-              },
-              {
-                "offeringId": 15,
-                "name": "Ethos Moka",
-                "imgCode": "suppliers/zehavi/ethosmoka.jpg",
                 "supplierId": 1
               }
             ]

@@ -1,8 +1,8 @@
 div#video-div.row
     div.col.s12.m8.offset-m2.ds-design-item
-        cl-video#video2.ds-imaging(public-id="{{videoList[2]}}{{videoList[4]}}"  preload="none" controls autoplay)
-            cl-video-transformation(overlay="{{videoList[1]}}" flags="splice")
-            cl-video-transformation(overlay="{{videoList[3]}}" flags="splice")
+        cl-video#video2.ds-imaging(public-id="{{videoList[2].path}}{{videoList[4].path}}"  preload="none" controls)
+            cl-video-transformation(overlay="{{videoList[1].path}}" flags="splice")
+            cl-video-transformation(overlay="{{videoList[3].path}}" flags="splice")
     ul.col.s12.m2.collapsible.hide-on-small-only(data-collapsible="expandable" )
         li
             div.active.collapsible-header
@@ -34,11 +34,11 @@ div.row
                     | {{room.title | translate}}
                 div.row.collapsible-body
                     ul
-                        li.col.s3(ng-repeat="item in room.items")
+                        li.col.s4(ng-repeat="item in room.items")
                             div.row
                                 input.with-gap.radio-green-light(id="radio_{{$parent.$index}}_{{$index}}"
                                     name="group{{$parent.$index}}" type="radio"
-                                    ng-model="videoList[room.roomId]" ng-value="getVideoValue(item.supplierId, room.roomId, item.offeringId)"
+                                    ng-model="videoList[room.roomId]" ng-value="getVideoValueData(item.supplierId, room.roomId, item.offeringId)"
                                     ng-checked="isChecked($index)" ng-change="changeDesignVideo()")
                                 label(for="radio_{{$parent.$index}}_{{$index}}")
                                 cl-image(public-id="{{item.imgCode}}"  width="50" crop="scale" format="png" quality="80" )

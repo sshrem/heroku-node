@@ -15,13 +15,13 @@ angular.module('DisignStudio')
       val: "-1"
     };
     $scope.allSuppliers;
+    $scope.videoListData={};
     $scope.videoList = [];
-    $scope.roomOffering = [];
     $scope.defaultFacebookVideoUrl;
     $scope.facebookVideo = {url: null};
     $scope.videoDetails=[];
     $scope.videoRoomList=[];
-    $scope.videoLength=0
+    $scope.videoLength=0;
     $scope.videoStartTime=0;
     $scope.videoEndTime=0;
     $scope.design;
@@ -32,6 +32,7 @@ angular.module('DisignStudio')
     $(document).ready(function () {
       $('.tooltipped').tooltip({delay: 50});
       $('.collapsible').collapsible();
+      $scope.playDesignVideo();
     });
 
     $timeout(function () {
@@ -40,7 +41,6 @@ angular.module('DisignStudio')
     }, 1000);
 
     $scope.getVideoValue = function (supplierId, roomId, offeringId) {
-      $scope.roomOffering[roomId] = offeringId;
       if (roomId == 4){ // kitchen - living room and kitchen in the same video
         return "_" + roomId + "_" + offeringId;
       }
@@ -52,15 +52,17 @@ angular.module('DisignStudio')
       path = path + supplierId + "_" + roomId + "_" + offeringId;
 
       return path;
+    }
 
+    $scope.getVideoValueData = function (supplierId, roomId, offeringId) {
+      return $scope.videoListData[''+supplierId][''+roomId][''+offeringId];
     }
 
     $scope.getFacebookVideoUrl = function () {
       var filters = [];
-      for (var ro  in $scope.roomOffering) {
-        var room = parseInt(ro);
-        var offer = $scope.roomOffering[ro];
-        filters.push({room: room, offer: offer});
+      for (var ro  in $scope.videoList) {
+        var offer = $scope.videoList[ro];
+        filters.push({room: offer.roomId , offer: offer.offeringId});
       }
 
       var data = {
@@ -131,35 +133,36 @@ angular.module('DisignStudio')
     };
 
     $scope.changeDesignVideo = function(){
-      var isPaused = $('#video2').get(0).paused;
-      // if (!isPaused){
+      // var isPaused = $('#video2').get(0).paused;
       $scope.playDesignVideo();
       $scope.getFacebookVideoUrl();
-      // }
 
     };
     $scope.playDesignVideo = function () {
-      var mp4Url = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
+      var path = cloudinaryPath2 + $stateParams.aptId + ":";
+      var videoList1Path = $scope.getVideoValue($scope.videoList[2].supplierId, 1, $scope.videoList[2].offeringId);
+
+      var mp4Url = Cloudinary.url($scope.videoList[2].path + $scope.videoList[4].path, {
         resource_type: 'video', format: 'mp4',
         transformation: [
-          {overlay: $scope.videoList[1], flags: "splice"},
-          {overlay: $scope.videoList[3], flags: "splice"},
+          {overlay: videoList1Path, flags: "splice"},
+          {overlay: $scope.videoList[3].path, flags: "splice"},
         ]
       });
 
-      var webmUrl = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
+      var webmUrl = Cloudinary.url($scope.videoList[2].path + $scope.videoList[4].path, {
         resource_type: 'video', format: 'webm',
         transformation: [
-          {overlay: $scope.videoList[1], flags: "splice"},
-          {overlay: $scope.videoList[3], flags: "splice"},
+          {overlay: videoList1Path, flags: "splice"},
+          {overlay: $scope.videoList[3].path, flags: "splice"},
         ]
       });
 
-      var oggUrl = Cloudinary.url($scope.videoList[2] + $scope.videoList[4], {
+      var oggUrl = Cloudinary.url($scope.videoList[2].path + $scope.videoList[4].path, {
         resource_type: 'video', format: 'ogg',
         transformation: [
-          {overlay: $scope.videoList[1], flags: "splice"},
-          {overlay: $scope.videoList[3], flags: "splice"},
+          {overlay: videoList1Path, flags: "splice"},
+          {overlay: $scope.videoList[3].path, flags: "splice"},
         ]
       });
 
@@ -216,10 +219,37 @@ angular.module('DisignStudio')
       $scope.roomItems = data.roomItems;
       $scope.defaultFacebookVideoUrl = data.defaultFacebookVideoUrl;
 
-      for (var room in $scope.roomItems) {
-        $scope.videoList[$scope.roomItems[room].roomId] = $scope.getVideoValue($scope.roomItems[room].items[0].supplierId, $scope.roomItems[room].roomId, $scope.roomItems[room].items[0].offeringId);
-        $scope.roomOffering[$scope.roomItems[room].roomId] = $scope.roomItems[room].items[0].offeringId;
+      for (var r in $scope.roomItems) {
+        var room = $scope.roomItems[r];
+        var roomId = room.roomId;
+        for (var i in room.items){
+          var item = room.items[i];
+          var supplierId = item.supplierId;
+          var offeringId = item.offeringId;
+          var path = $scope.getVideoValue(supplierId, roomId, offeringId);
+          var vlData = { "path": path, "supplierId": supplierId, "roomId": roomId, "offeringId": offeringId};
+
+          if (!$scope.videoList[roomId]){
+            $scope.videoList[roomId] = vlData;
+            if (roomId == 2){ // living room & kitchen
+              path = $scope.getVideoValue(supplierId, 1, offeringId);
+              $scope.videoList[1] = { "path": path, "supplierId": supplierId, "roomId": 1, "offeringId": offeringId};
+            }
+          }
+
+          if(!$scope.videoListData[''+supplierId]){
+            $scope.videoListData[''+supplierId]={};
+          }
+
+          if(!$scope.videoListData[''+supplierId][''+roomId]){
+            $scope.videoListData[''+supplierId][''+roomId]={};
+          }
+
+          $scope.videoListData[''+supplierId][''+roomId][''+offeringId] = vlData;
+
+        }
       }
+
 
       for (var room in data.videosDetails){
         var video = data.videosDetails[room];
