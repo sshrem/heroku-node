@@ -32,31 +32,13 @@ angular.module('DisignStudio')
     $(document).ready(function () {
       $('.tooltipped').tooltip({delay: 50});
       $('.collapsible').collapsible();
-      $scope.playDesignVideo();
     });
 
     $timeout(function () {
       $('.collapsible-header').addClass('active');
       $('.collapsible').collapsible();
+      $scope.playDesignVideo();
     }, 1000);
-
-    $scope.getVideoValue = function (supplierId, roomId, offeringId) {
-      if (roomId == 4){ // kitchen - living room and kitchen in the same video
-        return "_" + roomId + "_" + offeringId;
-      }
-
-      var path = cloudinaryPath2 + $stateParams.aptId + ":";
-      if (roomId == 2) {  // living room - the first video
-        path = cloudinaryPath + $stateParams.aptId + "/";
-      }
-      path = path + supplierId + "_" + roomId + "_" + offeringId;
-
-      return path;
-    }
-
-    $scope.getVideoValueData = function (supplierId, roomId, offeringId) {
-      return $scope.videoListData[''+supplierId][''+roomId][''+offeringId];
-    }
 
     $scope.getFacebookVideoUrl = function () {
       var filters = [];
@@ -191,6 +173,24 @@ angular.module('DisignStudio')
 
     $('#video2').get(0).onended = function(){
       $('#video2').get(0).currentTime = $scope.videoStartTime;
+    }
+
+    $scope.getVideoValue = function (supplierId, roomId, offeringId) {
+      if (roomId == 4){ // kitchen - living room and kitchen in the same video
+        return "_" + roomId + "_" + offeringId;
+      }
+
+      var path = cloudinaryPath2 + $stateParams.aptId + ":";
+      if (roomId == 2) {  // living room - the first video
+        path = cloudinaryPath + $stateParams.aptId + "/";
+      }
+      path = path + supplierId + "_" + roomId + "_" + offeringId;
+
+      return path;
+    }
+
+    $scope.getVideoValueData = function (supplierId, roomId, offeringId) {
+      return $scope.videoListData[''+supplierId][''+roomId][''+offeringId];
     }
 
 
