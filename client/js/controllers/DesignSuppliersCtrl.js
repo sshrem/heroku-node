@@ -44,7 +44,9 @@ angular.module('DisignStudio')
       var filters = [];
       for (var ro  in $scope.videoList) {
         var offer = $scope.videoList[ro];
-        filters.push({room: offer.roomId , offer: offer.offeringId});
+        if (offer.roomId !=1 ){ // living room
+          filters.push({room: offer.roomId , offer: offer.offeringId});
+        }
       }
 
       var data = {
