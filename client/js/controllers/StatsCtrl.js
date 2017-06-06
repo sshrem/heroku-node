@@ -134,7 +134,7 @@ angular.module('DisignStudio')
       }];
 
       $scope.chartConfig2.yAxis.max = maxCount;
-      Highcharts.chart('chart2', $scope.chartConfig1);
+      Highcharts.chart('chart2', $scope.chartConfig2);
 
       $scope.chartConfig3.series = [{
         name: 'Facebook Share',
