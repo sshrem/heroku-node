@@ -99,8 +99,7 @@ angular.module('DisignStudio')
       plotOptions: {
         bar: {
           dataLabels: {
-            enabled: true,
-            allowOverlap: true
+            enabled: true
           }
         }
       },
@@ -126,17 +125,24 @@ angular.module('DisignStudio')
       }];
       $scope.chartConfig1.yAxis.max = maxCount;
 
+      Highcharts.chart('chart1', $scope.chartConfig1);
+
+
       $scope.chartConfig2.series = [{
         name: 'Video View',
         data: videoViewData
       }];
+
       $scope.chartConfig2.yAxis.max = maxCount;
+      Highcharts.chart('chart2', $scope.chartConfig1);
 
       $scope.chartConfig3.series = [{
         name: 'Facebook Share',
         data: facebookShareData
       }];
       $scope.chartConfig3.yAxis.max = maxCount;
+
+      Highcharts.chart('chart3', $scope.chartConfig3);
 
     }
 

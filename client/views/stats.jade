@@ -17,7 +17,7 @@ html(lang='en', ng-app='DisignStudio')
   script(src="../bower_components/highcharts/highcharts.js")
   script(src="../bower_components/highcharts-ng/dist/highcharts-ng.js")
   script(src="../lib/cloudinary-angular.js")
-  //script(src="../lib/mixpanel.js")
+  script(src="../lib/mixpanel.js")
   script(src="../js/translations.js")
   script(src="../js/app.js")
   script(src="../js/controllers/ProjectCtrl.js")
@@ -28,7 +28,6 @@ html(lang='en', ng-app='DisignStudio')
   script(src="../js/directives/navbar.js")
   script(src="../js/services/DebugData.js")
   script(src="../js/config.js")
-  //script(src="../js/init.js")
 
   head
     base(href='/')
@@ -45,8 +44,8 @@ html(lang='en', ng-app='DisignStudio')
     var projectIdParam = !{JSON.stringify(projectId)}
   body(ng-controller='StatsCtrl')
     div
-      highchart#chart1(config="chartConfig1")
+      div#chart1
       hr
-      highchart#chart2(config="chartConfig2")
+      div#chart2
       hr
-      highchart#chart3(config="chartConfig3")
+      div#chart3

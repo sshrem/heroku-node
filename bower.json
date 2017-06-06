@@ -15,7 +15,7 @@
     "angular.uuid2": "angular-uuid2#*",
     "angular-cookies": "1.5.8",
     "highcharts-ng": "^1.1.0",
-    "highcharts": "^5.0.10"
+    "highcharts": "^5.0.12"
   },
   "resolutions": {
     "angular": "~1.5.8",
