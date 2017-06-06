@@ -14,7 +14,6 @@ angular.module('DisignStudio')
     $scope.chartConfig1 = {
       chart: {
         type: 'bar',
-        width: 800,
         height: 200
       },
       title: {
@@ -47,7 +46,6 @@ angular.module('DisignStudio')
     $scope.chartConfig2 = {
       chart: {
         type: 'bar',
-        width: 800,
         height: 200
       },
       title: {
@@ -80,7 +78,6 @@ angular.module('DisignStudio')
     $scope.chartConfig3 = {
       chart: {
         type: 'bar',
-        width: 800,
         height: 200
       },
       title: {
