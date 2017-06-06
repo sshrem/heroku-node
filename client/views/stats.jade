@@ -5,8 +5,8 @@ html(lang='en', ng-app='DisignStudio')
     var projectIdParam = !{JSON.stringify(projectId)}
   body(ng-controller='StatsCtrl')
     div
-      highchart.ds-stat-chart#chart1(config="chartConfig1")
+      highchart#chart1(config="chartConfig1")
       hr
-      highchart.ds-stat-chart#chart2(config="chartConfig2")
+      highchart#chart2(config="chartConfig2")
       hr
-      highchart.ds-stat-chart#chart3(config="chartConfig3")
+      highchart#chart3(config="chartConfig3")
