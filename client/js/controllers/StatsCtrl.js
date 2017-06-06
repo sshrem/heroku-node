@@ -35,7 +35,8 @@ angular.module('DisignStudio')
         }
       },
       credits: {
-        enabled: false
+        enabled: false,
+        allowOverlap: true
       },
       series: [{
         name: 'Visits',
@@ -65,7 +66,8 @@ angular.module('DisignStudio')
       plotOptions: {
         bar: {
           dataLabels: {
-            enabled: true
+            enabled: true,
+            allowOverlap: true
           }
         }
       },
@@ -97,7 +99,8 @@ angular.module('DisignStudio')
       plotOptions: {
         bar: {
           dataLabels: {
-            enabled: true
+            enabled: true,
+            allowOverlap: true
           }
         }
       },
