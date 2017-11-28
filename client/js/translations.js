@@ -18,7 +18,8 @@ var appTranslations = {
     "home-decor-marketplace": "Home Decor Marketplace",
     "user-experience-focused" : "User Experience Focused",
 		"chooseAreaToWatch": "Choose area to watch",
-		"allApartment": "All apartment"
+		"allApartment": "All apartment",
+		"blog": "Blog"
 	},
 	"he": {
 		"company": "יזם",
@@ -39,7 +40,8 @@ var appTranslations = {
     "home-decor-marketplace": "מרקטפלייס לעיצוב פנים",
 		"user-experience-focused" : "חווית משתמש",
     "chooseAreaToWatch": "בחר אזור לצפיה",
-    "allApartment": "כל הדירה"
+    "allApartment": "כל הדירה",
+		"blog": "בלוג"
 
   }
 }
