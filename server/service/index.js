@@ -41,9 +41,23 @@ exports.index = function (req, res) {
     });
 };
 
-exports.project = function (req, res) {
-    res.render('layout', {
+exports.projects = function (req, res) {
+    res.render('projects', {
         env: config.env
+    }, function (err, html) {
+        if (err)
+            console.log(err);
+        else
+            res.send(html);
+    });
+};
+
+exports.stats = function (req, res) {
+    var projid = req.params.projid;
+    res.render('stats', {
+        env: config.env,
+      projectId: projid
+
     }, function (err, html) {
         if (err)
             console.log(err);

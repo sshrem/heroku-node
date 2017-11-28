@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('DisignStudio')
-    .directive('menuBar', function () {
-        return {
-            restrict: 'E',
-            templateUrl: '/templates/navbar',
-            controller: 'NavCtrl'
-        };
-    });
+  .directive('menuBar', function () {
+    return {
+      restrict: 'E',
+      scope: {
+        navaprt: '@navaprt'
+      },
+      templateUrl: '/templates/navbar',
+      controller: 'NavCtrl'
+    };
+  });

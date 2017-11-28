@@ -1,0 +1,24 @@
+div.row
+    div.col.s12.m8
+        include project
+    div.col.s12.m4.ds-project-tabs
+        row
+            ul.tabs
+                li.tab.col.s4.m4
+                    a.active.ds-green(href="#aboutCompany") {{'company' | translate}}
+                li.tab.col.s4.m4
+                    a.ds-green(href="#aboutProject") {{'project' | translate}}
+                li.tab.col.s4.m4
+                    a.ds-green(href="#features") {{'features' | translate}}
+        div#aboutCompany.hebrew
+            cl-image(public-id="{{project.entrepreneurCachedData.logo}}"   format="png" quality="80" )
+            div.ds-gray(ng-bind-html="project.entrepreneurCachedData.about")
+        div#aboutProject.hebrew
+            a(ng-click="openProjectModal()")
+                cl-image(public-id="{{project.imageUrl}}"  width="300" crop="scale" format="png" quality="80" )
+            div.ds-gray(ng-bind-html="project.about")
+        div#features.hebrew
+            p
+                div(ng-repeat="feat in project.features")
+                    i.material-icons.ds-feature-icon.ds-green check
+                    span.ds-feature.hebrew.ds-gray {{feat}}

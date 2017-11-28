@@ -1,20 +1,29 @@
 'use strict';
 
 angular.module('DisignStudio')
-  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $location, $anchorScroll) {
+  .controller('ProjectCtrl', function ($rootScope, Cloudinary, $scope, $state, $http, debugData, $stateParams, $cookieStore) {
 
     angular.element(document).ready(function () {
-      $('.modal-trigger').leanModal();
+      $('.modal').modal();
       $('ul.tabs').tabs();
       $('.slider').slider({full_width: false});
     });
+    var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
+    $scope.visitStatRequestUrl = 'http://' + $rootScope.domain + '/api/stats/recordVisit';
 
     $scope.projectCode = 3;
     $scope.project;
     $scope.apartments;
     $scope.selectedApartment;
 
-    var initRequestUrl = 'http://' + $rootScope.domain + '/api/project';
+    if ($stateParams.projId!=null && $stateParams.projId.length>0){
+      $scope.projectCode = $stateParams.projId;
+    }
+
+    if ($stateParams.entrUserId!=null && $stateParams.entrUserId.length>0){
+      $rootScope.entrepreneurUserId = $stateParams.entrUserId;
+    }
+
 
     var buildApartmentsArray = function () {
       $scope.apartments = $scope.project.apartmentTemplateCachedData;
@@ -22,12 +31,31 @@ angular.module('DisignStudio')
 
     $scope.openApartmentModal = function (aptTemplate) {
       $scope.selectedApartment = aptTemplate;
-      $('#AptModal').openModal();
+      $('#AptModal').modal('open');
     }
 
     $scope.openProjectModal = function () {
-      $('#projectModal').openModal();
+      $('#projectModal').modal('open');
     }
+
+    $scope.getRequestData = function () {
+      var uuid = $rootScope.getUuid();
+      var data = {
+        userId: uuid,
+        entrepreneurUserId: $rootScope.entrepreneurUserId,
+        projectId: $scope.projectCode,
+        page: $state.current.name
+      };
+      return data;
+    }
+
+    $scope.sendVisitStatRequest = function () {
+      if ($rootScope.shouldSendStats){
+        var data = $scope.getRequestData();
+        $http.post($scope.visitStatRequestUrl, data);
+      }
+    };
+
 
     function init() {
       if ($rootScope.isDebugMode) {
@@ -42,6 +70,7 @@ angular.module('DisignStudio')
           if (res.data) {
             $scope.project = res.data;
             buildApartmentsArray();
+            $scope.sendVisitStatRequest();
           }
         }).error(function (e) {
           //

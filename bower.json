@@ -2,19 +2,22 @@
   "name": "disignstudio",
   "description": "DisignStudio Website",
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-route": "~1.4.7",
-    "angular-sanitize": "1.4.8",
+    "angular": "~1.5.8",
+    "angular-route": "~1.5.8",
+    "angular-sanitize": "1.5.8",
     "angular-translate": "2.10",
     "angular-ui-router": "0.2.18",
-    "materialize": "0.97.5",
+    "materialize": "0.98.2",
     "lodash": "4.6.1",
-    "angular-animate": "1.4.7",
+    "angular-animate": "1.5.8",
     "cloudinary": "cloudinary_js#^2.1.8",
-    "angular-socialshare": "angularjs-socialshare#^2.3.7"
+    "angular-socialshare": "angularjs-socialshare#^2.3.7",
+    "angular.uuid2": "angular-uuid2#*",
+    "angular-cookies": "1.5.8",
+    "highcharts": "^5.0.12"
   },
   "resolutions": {
-    "angular": "~1.4.7",
+    "angular": "~1.5.8",
     "lodash": "4.6.1"
   }
 }
